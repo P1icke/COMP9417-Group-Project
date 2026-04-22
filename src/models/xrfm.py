@@ -1,14 +1,20 @@
-import numpy as np
 from src.models.base_model import BaseModel
+from xrfm import xRFM
+
 
 class xRFMAlgorithm(BaseModel):
-    IS_PLACEHOLDER = True
-    
     def __init__(self, dataset_name, task_type):
         super().__init__(dataset_name, task_type)
 
+        tuning_metric = "mse" if task_type == "regression" else "accuracy"
+
+        self.model = xRFM(
+            tuning_metric=tuning_metric,
+            random_state=42,
+        )
+
     def train(self, X_train, y_train, X_val, y_val):
-        raise NotImplementedError("xRFM is currently a placeholder model. Implementation pending.")
+        self.model.fit(X_train, y_train, X_val, y_val)
 
     def predict(self, X_test):
-        raise NotImplementedError("xRFM is currently a placeholder model. Implementation pending.")
+        return self.model.predict(X_test)
