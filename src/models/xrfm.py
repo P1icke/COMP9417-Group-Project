@@ -2,7 +2,8 @@ import numpy as np
 
 from src.models.base_model import BaseModel
 from xrfm import xRFM
-
+from pathlib import Path
+import json
 
 def _as_writable(arr):
     # pandas .values can yield a read-only view; torch segfaults when it writes to one.
@@ -17,13 +18,45 @@ class xRFMAlgorithm(BaseModel):
 
         tuning_metric = "mse" if task_type == "regression" else "accuracy"
 
+        tuned_path = f"tuned_params/xrfm/{dataset_name}.json"
+        # check if the params have been tuned
+
+
+        if Path(tuned_path).exists():
+            with open(tuned_path) as f:
+                tuned = json.load(f)
+            tuned_params = tuned["params"]
+
+            default_rfm_params = {
+                'model': {
+                    "kernel": "l2_high_dim",
+                    "exponent": 1.0,
+                    "bandwidth": tuned_params["bandwidth"],
+                    "diag": tuned_params["diag"],
+                    "bandwidth_mode": "constant",
+                },
+                'fit': {
+                    "get_agop_best_model": True,
+                    "return_best_params": False,
+                    "reg": 1e-3,
+                    "iters": 0,
+                    "early_stop_rfm": False,
+                },
+            }
+            self.model = xRFM(
+                tuning_metric=tuning_metric,
+                random_state=42,
+                default_rfm_params=default_rfm_params,
+                n_threads=1,
+            )
+        else:
         # n_threads=1 avoids an OpenMP conflict on macOS when xgboost + sklearn + xrfm
         # are loaded in the same process (causes SIGSEGV during RFM fit otherwise).
-        self.model = xRFM(
-            tuning_metric=tuning_metric,
-            random_state=42,
-            n_threads=1,
-        )
+            self.model = xRFM(
+                tuning_metric=tuning_metric,
+                random_state=42,
+                n_threads=1,
+            )
 
     def train(self, X_train, y_train, X_val, y_val):
         self.model.fit(

@@ -26,6 +26,10 @@ GRID = [
 
 DATASETS = DATASET_CONFIG.items()
 
+# Classification_n_gt_10k takes ~12h per fit; full grid would be 125+ hours.
+# Skip for now; tune manually with a reduced grid or accept defaults.
+SKIP_DATASETS = {"Classification_n_gt_10k"}
+
 TUNED_PARAMS_DIR = Path("tuned_params/xrfm")
 TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -36,15 +40,32 @@ TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
 """Traion xRFM with that training data, and score it"""
 
 for dataset_name, config in DATASETS:
-    X_train, X_val, X_test, y_train, y_val, y_test = get_prepared_data(dataset_name) 
+    if dataset_name in SKIP_DATASETS:
+        print(f"Skipping {dataset_name} (too slow for full grid)")
+        continue
+
+    print(f"\n=== Tuning {dataset_name} ===")
+    X_train, X_val, X_test, y_train, y_val, y_test = get_prepared_data(dataset_name)
     task_type = config["task"]
 
     results = []
     for item in GRID:
-        default_rfm_params = {'model': {
-            "bandwidth": item["bandwidth"],
-            "diag": item["diag"]
-        }}
+        default_rfm_params = {
+            'model': {
+                "kernel": "l2_high_dim",
+                "exponent": 1.0,
+                "bandwidth": item["bandwidth"],
+                "diag": item["diag"],
+                "bandwidth_mode": "constant",
+            },
+            'fit': {
+                "get_agop_best_model": True,
+                "return_best_params": False,
+                "reg": 1e-3,
+                "iters": 0,
+                "early_stop_rfm": False,
+            },
+        }
 
         model = xRFM(
             tuning_metric="accuracy" if task_type == "classification" else "mse",   
