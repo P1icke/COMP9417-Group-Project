@@ -73,3 +73,6 @@ class xRFMAlgorithm(BaseModel):
         # xRFM has a predict proba method
         # so we want the output as a probably, instead of a yes/no answer
         return self.model.predict_proba(_as_writable(X_test))
+
+    def get_leaf_agops(self):
+        return self.model.collect_best_agops()
