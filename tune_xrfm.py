@@ -26,6 +26,9 @@ GRID = [
 
 DATASETS = DATASET_CONFIG.items()
 
+TUNED_PARAMS_DIR = Path("tuned_params/xrfm")
+TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
+
 
 """Try a bunch of hyperparameter combinations"""
 
@@ -36,6 +39,7 @@ for dataset_name, config in DATASETS:
     X_train, X_val, X_test, y_train, y_val, y_test = get_prepared_data(dataset_name) 
     task_type = config["task"]
 
+    results = []
     for item in GRID:
         default_rfm_params = {'model': {
             "bandwidth": item["bandwidth"],
@@ -49,11 +53,27 @@ for dataset_name, config in DATASETS:
             n_threads=1,
             
             )
-        model.fit(X_train, X_val, X_test, y_train, y_val, y_test)
+        model.fit(X_train, y_train, X_val, y_val)
+        predictions = model.predict(X_val)
 
-        model.predict(X_val)
+        if task_type == "classification":
+            score = accuracy_score(y_val, predictions)
+        else:
+            score = root_mean_squared_error(y_val, predictions)
+  
+        results.append({"params": item, "score": score})
+    
+    # pick a winner
+    """Pick the combination with the best val score"""
 
-"""Pick the combination with the best val score"""
+    if task_type == "classification":
+        winner = max(results, key=lambda r: r["score"])
+    else:
+        winner = min(results, key=lambda r: r["score"])
+
+    """Save those winning settings to a file"""
+    with open(TUNED_PARAMS_DIR / f"{dataset_name}.json", "w") as file:
+        json.dump(winner, file, indent=2)
 
 
-"""Save those winning settings to a file"""
+
