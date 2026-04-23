@@ -70,12 +70,21 @@ def main():
             
             if result:
                 all_results.append(result)
+                # in case of a crash, append the CSV so we still get partial results
+                csv_path = "results/benchmark_log.csv"
+                pd.DataFrame([result]).to_csv(
+                    csv_path,
+                    mode="a",
+                    header=not os.path.exists(csv_path),
+                    index=False,
+                )
+
 
     if all_results:
         results_df = pd.DataFrame(all_results)
         print("\nRun Summary:\n")
         print(results_df.to_string(index=False))
-        
+
         placeholder_count = (results_df["Test Score"] == "[PLACEHOLDER]").sum()
         if placeholder_count > 0:
             print(f"\nNote: {placeholder_count} model(s) are placeholders and have not been implemented yet.")
