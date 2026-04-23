@@ -44,6 +44,10 @@ for dataset_name, config in DATASETS:
         print(f"Skipping {dataset_name} (too slow for full grid)")
         continue
 
+    if (TUNED_PARAMS_DIR / f"{dataset_name}.json").exists():
+        print(f"Skipping {dataset_name} (already tuned)")
+        continue
+
     print(f"\n=== Tuning {dataset_name} ===")
     X_train, X_val, X_test, y_train, y_val, y_test = get_prepared_data(dataset_name)
     task_type = config["task"]
