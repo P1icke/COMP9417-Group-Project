@@ -23,8 +23,8 @@ from src.data_processor import DATASET_CONFIG, get_prepared_data
 np.random.seed(42)
 
 GRID = {
-    "max_depth": [3, 5, 7, 9],
-    "learning_rate": [0.01, 0.05, 0.1, 0.2],
+    "max_depth": [1, 2, 3, 5, 7, 9, 11],
+    "learning_rate": [0.005, 0.01, 0.05, 0.1, 0.2, 0.3],
 }
 
 # XGBoost is fast enough on Classification_n_gt_10k to tune directly — no skip
@@ -34,7 +34,10 @@ TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def build_model(task_type, params, y_train):
-    n_estimators = 2000
+    # 4000 ceiling so low-lr configs (e.g. 0.005) have room to converge before
+    # hitting the wall. Previous run showed lr=0.01 on Classification_n_gt_10k
+    # still improving at iter 1999; 4000 gives that regime breathing room.
+    n_estimators = 4000
     early_stopping = 20
     if task_type == "classification":
         pos = int((y_train == 1).sum())
