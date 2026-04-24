@@ -8,15 +8,8 @@ from src.models.xrfm import xRFMAlgorithm
 AGOPS_DIR = Path("results/agops")
 AGOPS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Same reason as tune_xrfm.py: full fit takes ~12h, not feasible for the analysis pass.
-SKIP_DATASETS = {"Classification_n_gt_10k"}
-
 
 for dataset_name, config in DATASET_CONFIG.items():
-    if dataset_name in SKIP_DATASETS:
-        print(f"Skipping {dataset_name} (too slow)")
-        continue
-
     out_path = AGOPS_DIR / f"{dataset_name}.pt"
     if out_path.exists():
         print(f"Skipping {dataset_name} (already analyzed)")

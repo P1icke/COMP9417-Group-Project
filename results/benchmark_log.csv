@@ -1,12 +1,7 @@
-Regression_n_gt_10k,MLP,RMSE,4.012,33.9184
-Regression_d_gt_50,MLP,RMSE,49088.9211,12.8115
-Regression_Mixed,MLP,RMSE,10862.4237,2.5766
-Classification_n_gt_10k,MLP,Accuracy,0.9993,31.1386
-Classification_d_gt_50,MLP,Accuracy,0.9638,2.7676
-Classification_Mixed,MLP,Accuracy,0.8841,0.6292
-Regression_n_gt_10k,XGBoost,RMSE,3.6558,5.6337
-Regression_d_gt_50,XGBoost,RMSE,25241.5547,0.5707
-Regression_Mixed,XGBoost,RMSE,4359.5615,0.666
-Classification_n_gt_10k,XGBoost,Accuracy,0.9995,1.4263
-Classification_d_gt_50,XGBoost,Accuracy,0.9726,1.1196
-Classification_Mixed,XGBoost,Accuracy,0.8913,0.2227
+Dataset,Algorithm,Metric Type,Test Score,Training Time (s),Inference Time per sample (s)
+Regression_n_gt_10k,xRFM,RMSE,3.1567,649.5834,7.2e-05
+Regression_d_gt_50,xRFM,RMSE,23887.4219,0.3987,7e-06
+Regression_Mixed,xRFM,RMSE,4661.5047,0.054,3e-06
+Classification_n_gt_10k,xRFM,Accuracy,0.8935,11.3205,2.3e-05
+Classification_d_gt_50,xRFM,Accuracy,0.9658,2.8446,1.1e-05
+Classification_Mixed,xRFM,Accuracy,0.8841,0.0262,3e-06
