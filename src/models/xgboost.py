@@ -23,10 +23,9 @@ class XGBoostAlgorithm(BaseModel):
                 "max_depth": 4
             },
             "Classification_n_gt_10k": {
-                "n_estimators": 1000, 
-                "learning_rate": 0.1, 
-                "max_depth": 5, 
-                "scale_pos_weight": 1
+                "n_estimators": 1000,
+                "learning_rate": 0.1,
+                "max_depth": 5,
             },
             "Classification_d_gt_50": {
                 "n_estimators": 400, 
