@@ -5,3 +5,9 @@ Regression_Mixed,xRFM,RMSE,4661.5047,0.0554,3e-06
 Classification_n_gt_10k,xRFM,Accuracy,0.8935,10.5681,2.4e-05,0.918
 Classification_d_gt_50,xRFM,Accuracy,0.9658,2.629,1.2e-05,0.799
 Classification_Mixed,xRFM,Accuracy,0.8841,0.0253,3e-06,0.9403
+Regression_n_gt_10k,XGBoost,RMSE,3.5587,8.8066,9e-06
+Regression_d_gt_50,XGBoost,RMSE,23816.7305,1.345,3e-06
+Regression_Mixed,XGBoost,RMSE,4383.8767,0.0184,2e-06
+Classification_n_gt_10k,XGBoost,Accuracy,0.8627,2.8575,3e-06,0.9307
+Classification_d_gt_50,XGBoost,Accuracy,0.9609,0.2262,1e-06,0.9151
+Classification_Mixed,XGBoost,Accuracy,0.8551,0.0576,3e-06,0.9365
