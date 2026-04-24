@@ -124,6 +124,34 @@ def get_prepared_data(dataset_name, val_size=0.15, test_size=0.15, random_state=
 
     return X_train, X_val, X_test, y_train.values, y_val.values, y_test.values
 
+
+def get_feature_names(dataset_name, val_size=0.15, test_size=0.15, random_state=42):
+    """Return the column names produced by get_prepared_data's preprocessor.
+
+    Replays the same split + preprocessor fit so one-hot category expansions
+    match what the models were trained on.
+    """
+    if dataset_name not in DATASET_CONFIG:
+        raise ValueError(f"Dataset '{dataset_name}' not found in configuration.")
+
+    config = DATASET_CONFIG[dataset_name]
+    file_path = os.path.join(DATA_DIR, config["folder"], config["file"])
+    df = pd.read_csv(file_path)
+    df = df.drop(columns=[c for c in config["drop_cols"] if c in df.columns])
+
+    X = df.drop(columns=[config["target"]])
+    y = df[config["target"]]
+
+    stratify = y if config["task"] == "classification" else None
+    X_train_raw, _, _, _ = train_test_split(
+        X, y, test_size=val_size + test_size, random_state=random_state, stratify=stratify
+    )
+
+    preprocessor = _build_preprocessor(X_train_raw)
+    preprocessor.fit(X_train_raw)
+    return preprocessor.get_feature_names_out().tolist()
+
+
 if __name__ == "__main__":
     print("Running 3-way split processor test suite...\n")
     
