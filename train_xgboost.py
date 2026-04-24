@@ -36,13 +36,8 @@ for name, type in data:
                             name,
                             "XGBoost")
     
-    #calculate inference time (avg time per sample) PLACEHOLDER because 
-    #should be done in evaluator.py
-    output['PLACEHOLDER Inference time/sample (s)'] = round((output['Training Time (s)']/len(X_train)), 5)
-    
     if "Classification" in name:
-
-        probs = model.model.predict_proba(X_test)[:, 1]
+        probs = model.predict_proba(X_test)[:, 1]
         output["AUC-ROC"] = round(roc_auc_score(y_test, probs), 4)
     
 

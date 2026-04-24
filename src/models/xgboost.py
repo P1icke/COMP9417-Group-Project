@@ -70,3 +70,6 @@ class XGBoostAlgorithm(BaseModel):
 
     def predict(self, X_test):
         return self.model.predict(X_test)
+
+    def predict_proba(self, X_test):
+        return self.model.predict_proba(X_test)

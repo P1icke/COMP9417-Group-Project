@@ -42,15 +42,12 @@ with open('results/tuning_xgboost.txt', 'a') as f:
                                 name,
                                 "XGBoost")
         
-        #calculate inference time (avg time per sample)
-        output['Inference time per sample (s)'] = round((output['Training Time (s)']/len(X_train)), 5)
-        
         #Measure AUC for all data splits, to see if any is particularly overfit
         if "Classification" in name:
 
-            train_probs = model.model.predict_proba(X_train)[:, 1]
-            test_probs = model.model.predict_proba(X_test)[:, 1]
-            val_probs = model.model.predict_proba(X_val)[:, 1]
+            train_probs = model.predict_proba(X_train)[:, 1]
+            test_probs = model.predict_proba(X_test)[:, 1]
+            val_probs = model.predict_proba(X_val)[:, 1]
 
             train_auc = round(roc_auc_score(y_train, train_probs), 4)
             test_auc = round(roc_auc_score(y_test, test_probs), 4)

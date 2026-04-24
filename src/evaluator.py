@@ -24,26 +24,29 @@ def evaluate_model(model_instance, X_train, y_train, X_val, y_val, X_test, y_tes
         return None
         
     train_time = time.time() - start_time
-    
+
     try:
+        pred_start = time.time()
         predictions = model_instance.predict(X_test)
+        pred_time = time.time() - pred_start
     except Exception as e:
         print(f"Error predicting with {algorithm_name} on {dataset_name}: {e}")
         return None
-    
+
     if "Classification" in dataset_name:
         score = accuracy_score(y_test, predictions)
         metric_name = "Accuracy"
     else:
         score = root_mean_squared_error(y_test, predictions)
         metric_name = "RMSE"
-        
+
     log_entry = {
         "Dataset": dataset_name,
         "Algorithm": algorithm_name,
         "Metric Type": metric_name,
         "Test Score": round(score, 4),
-        "Training Time (s)": round(train_time, 4)
+        "Training Time (s)": round(train_time, 4),
+        "Inference Time per sample (s)": round(pred_time / len(X_test), 6),
     }
     
     return log_entry
