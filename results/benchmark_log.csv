@@ -1,7 +1,7 @@
 Dataset,Algorithm,Metric Type,Test Score,Training Time (s),Inference Time per sample (s)
-Regression_n_gt_10k,xRFM,RMSE,3.1567,649.5834,7.2e-05
-Regression_d_gt_50,xRFM,RMSE,23887.4219,0.3987,7e-06
-Regression_Mixed,xRFM,RMSE,4661.5047,0.054,3e-06
-Classification_n_gt_10k,xRFM,Accuracy,0.8935,11.3205,2.3e-05
-Classification_d_gt_50,xRFM,Accuracy,0.9658,2.8446,1.1e-05
-Classification_Mixed,xRFM,Accuracy,0.8841,0.0262,3e-06
+Regression_n_gt_10k,xRFM,RMSE,3.1567,655.1666,0.000111
+Regression_d_gt_50,xRFM,RMSE,23887.4219,0.3914,7e-06
+Regression_Mixed,xRFM,RMSE,4661.5047,0.0554,3e-06
+Classification_n_gt_10k,xRFM,Accuracy,0.8935,10.5681,2.4e-05,0.918
+Classification_d_gt_50,xRFM,Accuracy,0.9658,2.629,1.2e-05,0.799
+Classification_Mixed,xRFM,Accuracy,0.8841,0.0253,3e-06,0.9403
