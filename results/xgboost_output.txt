@@ -1,0 +1,8 @@
+XGboost model output - Thu Apr 23 14:36:23 2026
+
+{'Dataset': 'Classification_n_gt_10k', 'Algorithm': 'XGBoost', 'Metric Type': 'Accuracy', 'Test Score': 0.9995, 'Training Time (s)': 2.391, 'Inference time per sample (s)': 1e-05, 'AUC-ROC': 0.955}
+{'Dataset': 'Regression_n_gt_10k', 'Algorithm': 'XGBoost', 'Metric Type': 'RMSE', 'Test Score': 3.6514, 'Training Time (s)': 6.8234, 'Inference time per sample (s)': 0.00021}
+{'Dataset': 'Classification_Mixed', 'Algorithm': 'XGBoost', 'Metric Type': 'Accuracy', 'Test Score': 0.8913, 'Training Time (s)': 0.1361, 'Inference time per sample (s)': 0.00021, 'AUC-ROC': 0.9315}
+{'Dataset': 'Regression_Mixed', 'Algorithm': 'XGBoost', 'Metric Type': 'RMSE', 'Test Score': 4359.5615, 'Training Time (s)': 0.4283, 'Inference time per sample (s)': 0.00046}
+{'Dataset': 'Regression_d_gt_50', 'Algorithm': 'XGBoost', 'Metric Type': 'RMSE', 'Test Score': 25735.6562, 'Training Time (s)': 1.5518, 'Inference time per sample (s)': 0.00076}
+{'Dataset': 'Classification_d_gt_50', 'Algorithm': 'XGBoost', 'Metric Type': 'Accuracy', 'Test Score': 0.9736, 'Training Time (s)': 2.1363, 'Inference time per sample (s)': 0.00045, 'AUC-ROC': 0.9466}
