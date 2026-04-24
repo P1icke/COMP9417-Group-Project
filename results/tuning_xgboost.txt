@@ -163,3 +163,41 @@ DATASET:Regression_n_gt_10k
 mean of y_train: 7.751386179750711
 General output
 {'Dataset': 'Regression_n_gt_10k', 'Algorithm': 'XGBoost', 'Metric Type': 'RMSE', 'Test Score': 3.6514, 'Training Time (s)': 5.3966, 'Inference time per sample (s)': 0.00017}
+
+===XGboost model output - Fri Apr 24 20:06:06 2026===
+
+DATASET:Regression_n_gt_10k
+mean of y_train: 7.751386179750711
+General output
+{'Dataset': 'Regression_n_gt_10k', 'Algorithm': 'XGBoost', 'Metric Type': 'RMSE', 'Test Score': 3.6558, 'Training Time (s)': 1.9671, 'Inference time per sample (s)': 6e-05}
+
+DATASET:Regression_Mixed
+mean of y_train: 13379.157306773504
+General output
+{'Dataset': 'Regression_Mixed', 'Algorithm': 'XGBoost', 'Metric Type': 'RMSE', 'Test Score': 4359.5615, 'Training Time (s)': 0.3039, 'Inference time per sample (s)': 0.00032}
+
+DATASET:Classification_Mixed
+train_auc: 0.9716
+val_auc: 0.9436
+test_auc: 0.934
+General output
+{'Dataset': 'Classification_Mixed', 'Algorithm': 'XGBoost', 'Metric Type': 'Accuracy', 'Test Score': 0.8841, 'Training Time (s)': 0.0591, 'Inference time per sample (s)': 9e-05}
+
+DATASET:Classification_d_gt_50
+train_auc: 1.0
+val_auc: 0.9486
+test_auc: 0.9454
+General output
+{'Dataset': 'Classification_d_gt_50', 'Algorithm': 'XGBoost', 'Metric Type': 'Accuracy', 'Test Score': 0.9726, 'Training Time (s)': 0.7754, 'Inference time per sample (s)': 0.00016}
+
+DATASET:Classification_n_gt_10k
+train_auc: 1.0
+val_auc: 0.978
+test_auc: 0.9475
+General output
+{'Dataset': 'Classification_n_gt_10k', 'Algorithm': 'XGBoost', 'Metric Type': 'Accuracy', 'Test Score': 0.9994, 'Training Time (s)': 1.2118, 'Inference time per sample (s)': 1e-05}
+
+DATASET:Regression_d_gt_50
+mean of y_train: 178641.25012189176
+General output
+{'Dataset': 'Regression_d_gt_50', 'Algorithm': 'XGBoost', 'Metric Type': 'RMSE', 'Test Score': 25241.5547, 'Training Time (s)': 0.2524, 'Inference time per sample (s)': 0.00012}
