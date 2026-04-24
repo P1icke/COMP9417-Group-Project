@@ -14,12 +14,12 @@ np.random.seed(42)
 with open('results/xgboost_output.txt', 'w') as f:
     f.write(f'XGboost model output - {time.ctime()}\n\n')
 
-data = {("Classification_d_gt_50", 'classification'),
+data = [("Classification_d_gt_50", 'classification'),
         ("Classification_Mixed", 'classification'),
         ("Classification_n_gt_10k", 'classification'),
         ("Regression_d_gt_50", 'regression'),
         ("Regression_Mixed", 'regression'),
-        ("Regression_n_gt_10k", 'regression')}
+        ("Regression_n_gt_10k", 'regression')]
 
 
 for name, type in data:
