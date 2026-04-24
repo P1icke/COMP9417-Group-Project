@@ -57,6 +57,11 @@ class XGBoostAlgorithm(BaseModel):
             )
 
     def train(self, X_train, y_train, X_val, y_val):
+        if self.task_type == "classification":
+            pos = int((y_train == 1).sum())
+            neg = int((y_train == 0).sum())
+            if pos > 0:
+                self.model.set_params(scale_pos_weight=neg / pos)
         self.model.fit(
             X_train, y_train,
             eval_set=[(X_val, y_val)],
