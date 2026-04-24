@@ -1,96 +1,96 @@
-#Tune for optimal tree values for each dataset.
+"""Grid-search tuner for XGBoost.
 
-from src.models.xgboost import XGBoostAlgorithm
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_auc_score
-import time
+Mirrors tune_xrfm.py: for each dataset, sweep a small hyperparameter grid,
+score each config on the validation set, and dump the winner to
+tuned_params/xgboost/<dataset>.json. XGBoostAlgorithm.__init__ loads that
+file when it exists, falling back to the hardcoded defaults otherwise.
+
+Classification uses AUC-ROC (accuracy is misleading on Classification_n_gt_10k
+where the majority baseline is 99.83%); regression uses RMSE.
+"""
+
+import json
+from itertools import product
+from pathlib import Path
+
 import numpy as np
-from src.evaluator import evaluate_model
-from src.data_processor import get_prepared_data
-import sys
+from sklearn.metrics import roc_auc_score, root_mean_squared_error
+from xgboost import XGBClassifier, XGBRegressor
+
+from src.data_processor import DATASET_CONFIG, get_prepared_data
 
 
 np.random.seed(42)
 
-with open('results/tuning_xgboost.txt', 'a') as f:
-    f.write(f'\n===XGboost model output - {time.ctime()}===\n')
+GRID = {
+    "max_depth": [3, 5, 7, 9],
+    "learning_rate": [0.01, 0.05, 0.1, 0.2],
+}
 
-    data = [("Classification_d_gt_50", 'classification'),
-            ("Classification_Mixed", 'classification'),
-            ("Classification_n_gt_10k", 'classification'),
-            ("Regression_d_gt_50", 'regression'),
-            ("Regression_Mixed", 'regression'),
-            ("Regression_n_gt_10k", 'regression')]
-
-
-    for name, type in data:
-        f.write(f'\nDATASET:{name}\n')
-        model = XGBoostAlgorithm(name, type)
-        
-
-        X_train, X_val, X_test, y_train, y_val, y_test = get_prepared_data(name)
+# XGBoost is fast enough on Classification_n_gt_10k to tune directly — no skip
+# list needed (unlike tune_xrfm.py, where the same dataset is runtime-prohibitive).
+TUNED_PARAMS_DIR = Path("tuned_params/xgboost")
+TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
 
 
-        output = evaluate_model(model,
-                                X_train,
-                                y_train,
-                                X_val,
-                                y_val,
-                                X_test,
-                                y_test,
-                                name,
-                                "XGBoost")
-        
-        #Measure AUC for all data splits, to see if any is particularly overfit
-        if "Classification" in name:
+def build_model(task_type, params, y_train):
+    n_estimators = 2000
+    early_stopping = 20
+    if task_type == "classification":
+        pos = int((y_train == 1).sum())
+        neg = int((y_train == 0).sum())
+        spw = neg / pos if pos > 0 else 1.0
+        return XGBClassifier(
+            **params,
+            n_estimators=n_estimators,
+            early_stopping_rounds=early_stopping,
+            random_state=42,
+            eval_metric="logloss",
+            scale_pos_weight=spw,
+        )
+    return XGBRegressor(
+        **params,
+        n_estimators=n_estimators,
+        early_stopping_rounds=early_stopping,
+        random_state=42,
+    )
 
-            train_probs = model.predict_proba(X_train)[:, 1]
-            test_probs = model.predict_proba(X_test)[:, 1]
-            val_probs = model.predict_proba(X_val)[:, 1]
 
-            train_auc = round(roc_auc_score(y_train, train_probs), 4)
-            test_auc = round(roc_auc_score(y_test, test_probs), 4)
-            val_auc = round(roc_auc_score(y_val, val_probs), 4)
-            f.write(f'train_auc: {train_auc}\n')
-            f.write(f'val_auc: {val_auc}\n')
-            f.write(f'test_auc: {test_auc}\n')
-           
+for dataset_name, config in DATASET_CONFIG.items():
+    out_path = TUNED_PARAMS_DIR / f"{dataset_name}.json"
+    if out_path.exists():
+        print(f"Skipping {dataset_name} (already tuned)")
+        continue
 
+    print(f"\n=== Tuning {dataset_name} ===")
+    X_train, X_val, X_test, y_train, y_val, y_test = get_prepared_data(dataset_name)
+    task_type = config["task"]
+
+    results = []
+    for combo in product(*GRID.values()):
+        params = dict(zip(GRID.keys(), combo))
+        model = build_model(task_type, params, y_train)
+        model.fit(X_train, y_train, eval_set=[(X_val, y_val)], verbose=False)
+
+        if task_type == "classification":
+            probs = model.predict_proba(X_val)[:, 1]
+            score = roc_auc_score(y_val, probs)
         else:
-            y_mean = y_train.mean()
-            f.write(f'mean of y_train: {y_mean}\n')
-            
-        f.write(f'General output\n{output}\n')
-    
+            preds = model.predict(X_val)
+            score = root_mean_squared_error(y_val, preds)
 
+        # Bake the early-stopping result into n_estimators so the wrapper can
+        # reload without needing the val set to rediscover it.
+        tuned = dict(params)
+        tuned["n_estimators"] = int(model.best_iteration) + 1
+        results.append({"params": tuned, "score": float(score)})
+        print(f"  {params} -> {score:.4f} (best_iter={model.best_iteration})")
 
-#Notes
+    if task_type == "classification":
+        winner = max(results, key=lambda r: r["score"])
+    else:
+        winner = min(results, key=lambda r: r["score"])
 
-#CLass. n > 10k
-#Train AUC > test AUC -> potential overfitting
-#   - could reduce tree complexity
-#   - 
-
-#Class. d > 50
-#High overfitting!
-#   - adjust complexity: pruning? depth?
-
-#Class. mixed
-#Train AUC > test AUC  -> potential overfitting
-
-
-#Regression models all helpful - RMSE significantly lower than simple mean
-#Could be helpful to display metrics for train_test_val like for AUC.
-#   - means to compare against RMSE.
-
-
-#Reg. n > 10k
-#Should train over a range of tree-depth {4-10} to see where RMSE performs best
-
-#Reg. d > 50
-#See above, {4-11} (potential complex interactions)
-
-#Reg. mixed
-
-
+    with open(out_path, "w") as f:
+        json.dump(winner, f, indent=2)
+    print(f"  -> winner: {winner['params']} (score={winner['score']:.4f})")

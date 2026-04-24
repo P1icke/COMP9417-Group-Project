@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 from src.models.base_model import BaseModel
 from xgboost import XGBClassifier, XGBRegressor
 
@@ -40,8 +43,13 @@ class XGBoostAlgorithm(BaseModel):
             }
         }
         
-        params = self.hyperparameters.get(dataset_name)
-        
+        tuned_path = Path(f"tuned_params/xgboost/{dataset_name}.json")
+        if tuned_path.exists():
+            with open(tuned_path) as f:
+                params = json.load(f)["params"]
+        else:
+            params = self.hyperparameters.get(dataset_name, {})
+
         if self.task_type == "classification":
             self.model = XGBClassifier(
                 **params, 
