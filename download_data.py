@@ -22,7 +22,7 @@ datasets_map = {
         "slug": "mirichoi0218/insurance",
     },
     "Classification_n_gt_10k": {
-        "slug": "mlg-ulb/creditcardfraud",
+        "slug": "henrysue/online-shoppers-intention",
     },
     "Classification_d_gt_50": {
         "slug": "fedesoriano/company-bankruptcy-prediction",

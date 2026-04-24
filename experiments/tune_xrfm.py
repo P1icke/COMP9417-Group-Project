@@ -26,10 +26,6 @@ GRID = [
 
 DATASETS = DATASET_CONFIG.items()
 
-# Classification_n_gt_10k takes ~12h per fit; full grid would be 125+ hours.
-# Skip for now; tune manually with a reduced grid or accept defaults.
-SKIP_DATASETS = {"Classification_n_gt_10k"}
-
 TUNED_PARAMS_DIR = Path("tuned_params/xrfm")
 TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -40,10 +36,6 @@ TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
 """Traion xRFM with that training data, and score it"""
 
 for dataset_name, config in DATASETS:
-    if dataset_name in SKIP_DATASETS:
-        print(f"Skipping {dataset_name} (too slow for full grid)")
-        continue
-
     if (TUNED_PARAMS_DIR / f"{dataset_name}.json").exists():
         print(f"Skipping {dataset_name} (already tuned)")
         continue
