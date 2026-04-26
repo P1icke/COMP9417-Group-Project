@@ -1,18 +1,49 @@
 from src.models.base_model import BaseModel
 from sklearn.neural_network import MLPClassifier, MLPRegressor
+import numpy as np
 
 class MLPAlgorithm(BaseModel):
     def __init__(self, dataset_name, task_type):
         super().__init__(dataset_name, task_type)
         self.hyperparameters = {
-            "Regression_n_gt_10k":      {"hidden_layer_sizes": (100, 50), "alpha": 0.01},
-            "Regression_d_gt_50":       {"hidden_layer_sizes": (200,), "alpha": 0.001},
-            "Regression_Mixed":         {"hidden_layer_sizes": (50,), "alpha": 0.0001},
-            "Classification_n_gt_10k":  {"hidden_layer_sizes": (100, 50, 25), "alpha": 0.01},
-            "Classification_d_gt_50":   {"hidden_layer_sizes": (50, 25), "alpha": 0.05},
-            "Classification_Mixed":     {"hidden_layer_sizes": (10,), "alpha": 0.1},
+            "Regression_n_gt_10k":      {
+                'activation': 'tanh',
+                'alpha': np.float64(0.08591342830048515),
+                'hidden_layer_sizes': (128, 64),
+                'learning_rate_init': np.float64(0.00615533906228275),
+            },
+            "Regression_d_gt_50":       {
+                'activation': 'relu',
+                'alpha': np.float64(0.07423121900844358),
+                'hidden_layer_sizes': (64, 32),
+                'learning_rate_init': np.float64(0.006741738304421186),
+            },
+            "Regression_Mixed":         {
+                'activation': 'relu',
+                'alpha': np.float64(0.0066157058689567585),
+                'hidden_layer_sizes': (128, 64),
+                'learning_rate_init': np.float64(0.009776977915629067),
+            },
+            "Classification_n_gt_10k":  {
+                'activation': 'tanh',
+                'alpha': np.float64(2.1057814970278994e-05),
+                'hidden_layer_sizes': (128, 64),
+                'learning_rate_init': np.float64(0.00029872741995638395),
+            },
+            "Classification_d_gt_50":   {
+                'activation': 'tanh',
+                'alpha': np.float64(0.008111253665497063),
+                'hidden_layer_sizes': (64, 32),
+                'learning_rate_init': np.float64(0.00015030900645056822),
+            },
+            "Classification_Mixed":     {
+                'activation': 'relu',
+                'alpha': np.float64(2.6422690597255385e-05),
+                'hidden_layer_sizes': (128, 64),
+                'learning_rate_init': np.float64(0.004048966222584676),
+            },
         }
-        
+
         params = self.hyperparameters.get(dataset_name)
         
         if self.task_type == "classification":
