@@ -1,0 +1,8 @@
+{
+  "params": {
+    "max_depth": 3,
+    "learning_rate": 0.005,
+    "n_estimators": 4000
+  },
+  "score": 0.924193209222
+}

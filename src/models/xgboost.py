@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 from src.models.base_model import BaseModel
 from xgboost import XGBClassifier, XGBRegressor
 
@@ -23,10 +26,9 @@ class XGBoostAlgorithm(BaseModel):
                 "max_depth": 4
             },
             "Classification_n_gt_10k": {
-                "n_estimators": 1000, 
-                "learning_rate": 0.1, 
-                "max_depth": 5, 
-                "scale_pos_weight": 1
+                "n_estimators": 1000,
+                "learning_rate": 0.1,
+                "max_depth": 5,
             },
             "Classification_d_gt_50": {
                 "n_estimators": 400, 
@@ -41,8 +43,13 @@ class XGBoostAlgorithm(BaseModel):
             }
         }
         
-        params = self.hyperparameters.get(dataset_name)
-        
+        tuned_path = Path(f"tuned_params/xgboost/{dataset_name}.json")
+        if tuned_path.exists():
+            with open(tuned_path) as f:
+                params = json.load(f)["params"]
+        else:
+            params = self.hyperparameters.get(dataset_name, {})
+
         if self.task_type == "classification":
             self.model = XGBClassifier(
                 **params, 
@@ -58,6 +65,11 @@ class XGBoostAlgorithm(BaseModel):
             )
 
     def train(self, X_train, y_train, X_val, y_val):
+        if self.task_type == "classification":
+            pos = int((y_train == 1).sum())
+            neg = int((y_train == 0).sum())
+            if pos > 0:
+                self.model.set_params(scale_pos_weight=neg / pos)
         self.model.fit(
             X_train, y_train,
             eval_set=[(X_val, y_val)],
@@ -66,3 +78,6 @@ class XGBoostAlgorithm(BaseModel):
 
     def predict(self, X_test):
         return self.model.predict(X_test)
+
+    def predict_proba(self, X_test):
+        return self.model.predict_proba(X_test)

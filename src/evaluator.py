@@ -1,6 +1,6 @@
 # src/evaluator.py
 import time
-from sklearn.metrics import accuracy_score, root_mean_squared_error
+from sklearn.metrics import accuracy_score, roc_auc_score, root_mean_squared_error
 
 def evaluate_model(model_instance, X_train, y_train, X_val, y_val, X_test, y_test, dataset_name, algorithm_name):
     """Standardized evaluation wrapper ensuring no data leakage."""
@@ -24,26 +24,36 @@ def evaluate_model(model_instance, X_train, y_train, X_val, y_val, X_test, y_tes
         return None
         
     train_time = time.time() - start_time
-    
+
     try:
+        pred_start = time.time()
         predictions = model_instance.predict(X_test)
+        pred_time = time.time() - pred_start
     except Exception as e:
         print(f"Error predicting with {algorithm_name} on {dataset_name}: {e}")
         return None
-    
+
     if "Classification" in dataset_name:
         score = accuracy_score(y_test, predictions)
         metric_name = "Accuracy"
     else:
         score = root_mean_squared_error(y_test, predictions)
         metric_name = "RMSE"
-        
+
     log_entry = {
         "Dataset": dataset_name,
         "Algorithm": algorithm_name,
         "Metric Type": metric_name,
         "Test Score": round(score, 4),
-        "Training Time (s)": round(train_time, 4)
+        "Training Time (s)": round(train_time, 4),
+        "Inference Time per sample (s)": round(pred_time / len(X_test), 6),
     }
-    
+
+    if "Classification" in dataset_name and hasattr(model_instance, "predict_proba"):
+        try:
+            probs = model_instance.predict_proba(X_test)[:, 1]
+            log_entry["AUC-ROC"] = round(roc_auc_score(y_test, probs), 4)
+        except Exception as e:
+            print(f"Could not compute AUC for {algorithm_name} on {dataset_name}: {e}")
+
     return log_entry

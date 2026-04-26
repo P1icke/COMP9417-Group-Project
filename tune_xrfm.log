@@ -1,0 +1,1670 @@
+
+=== Tuning Regression_n_gt_10k ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+/Users/andy/Documents/Uni/COMP9417-Group-Project/.venv/lib/python3.12/site-packages/xrfm/xrfm.py:856: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  y = torch.as_tensor(y).to(self.device)
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 96.64092898368835 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 106.87695002555847 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 109.00727391242981 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 108.59209394454956 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 100.87442302703857 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [10:25<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 107.99833583831787 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 105.20847487449646 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 106.36564707756042 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 113.6607391834259 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 119.53196430206299 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [11:09<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 151.12194395065308 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 140.3793478012085 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 132.70621919631958 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 123.9904522895813 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 127.65010094642639 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [13:18<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 110.99505591392517 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 140.18820309638977 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 132.14358282089233 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 90.27107000350952 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 112.50096392631531 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [11:29<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 102.2516701221466 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 117.02012801170349 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 140.41354990005493 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 152.71108508110046 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 116.36141395568848 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [12:29<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 139.09742903709412 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 164.4541711807251 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 101.27625226974487 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 118.29878091812134 seconds
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+
+=== Tuning Regression_n_gt_10k ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+/Users/andy/Documents/Uni/COMP9417-Group-Project/.venv/lib/python3.12/site-packages/xrfm/xrfm.py:856: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  y = torch.as_tensor(y).to(self.device)
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 102.93646788597107 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 105.62664103507996 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 119.13693499565125 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 108.99956703186035 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 156.5952582359314 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [12:05<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 118.60773301124573 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 146.64187216758728 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 114.73934602737427 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 123.88639688491821 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 118.11732506752014 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [12:53<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 218.3833510875702 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 154.6278657913208 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 125.62494492530823 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 132.56423211097717 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 147.44056606292725 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [15:17<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 152.0353581905365 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 167.5765962600708 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 156.75911593437195 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 160.31411695480347 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 136.4144217967987 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [15:14<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 126.46064901351929 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 145.06001782417297 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 110.7116711139679 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 118.58588194847107 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 99.12588405609131 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [11:40<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 122.53107619285583 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 112.39852905273438 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 109.1460952758789 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 102.04166293144226 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 96.81501388549805 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [10:44<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 97.79449892044067 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 89.4792799949646 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 93.36132192611694 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 91.8956081867218 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 99.27192211151123 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [09:32<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 93.93250107765198 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 89.96739196777344 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 111.07228899002075 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 95.80178928375244 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 84.30838203430176 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [09:19<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 90.79018306732178 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 108.5779230594635 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 89.84516406059265 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 84.09501504898071 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 85.6559669971466 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [09:01<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 32011, d: 9, and nval: 6859
+======================================================================
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 0: 87.06307291984558 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 1: 83.43529605865479 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 2: 91.51560711860657 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 3: 84.66133403778076 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Time taken for round 4: 90.75257802009583 seconds
+Using cheap batch size
+Optimal M batch size: 10000
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [09:00<?, ?it/s]
+Using hard routing for tree prediction
+
+=== Tuning Regression_d_gt_50 ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.1976759433746338 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.0749351978302002 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.06829690933227539 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.0864858627319336 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.079498291015625 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.08043098449707031 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.07298398017883301 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.07769012451171875 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.07045984268188477 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.07074308395385742 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.06831598281860352 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.0637969970703125 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.06343293190002441 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.07138204574584961 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.06336307525634766 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.06064891815185547 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.05952620506286621 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.05960392951965332 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.05955791473388672 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.060376882553100586 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.06907391548156738 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.06363701820373535 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.06055712699890137 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.05888772010803223 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.058991193771362305 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.06001162528991699 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.05959820747375488 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.06023287773132324 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.06534028053283691 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.07833194732666016 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.06578302383422852 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.06953907012939453 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.07454109191894531 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.07193493843078613 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.07509112358093262 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.07304596900939941 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.07384395599365234 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.07097029685974121 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.06893229484558105 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.06428694725036621 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.06463313102722168 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.06621003150939941 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.06379485130310059 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.06404304504394531 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.06776809692382812 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 2051, d: 68, and nval: 439
+======================================================================
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 0: 0.06716108322143555 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 1: 0.06647586822509766 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 2: 0.06436395645141602 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 3: 0.06406331062316895 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Time taken for round 4: 0.06400680541992188 seconds
+Using cheap batch size
+Optimal M batch size: 2051
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+
+=== Tuning Regression_Mixed ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.010127067565917969 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.009518146514892578 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009639978408813477 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.010049819946289062 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009716033935546875 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.010089874267578125 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.009433984756469727 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009510993957519531 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009445905685424805 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009592056274414062 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.009427785873413086 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.009381771087646484 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009339094161987305 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009553194046020508 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009401798248291016 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.009468317031860352 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.009476661682128906 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009432077407836914 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009382963180541992 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009471893310546875 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.009356021881103516 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.009346723556518555 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009621143341064453 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.00937199592590332 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009339094161987305 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.009429216384887695 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.00941610336303711 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009560108184814453 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009435176849365234 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009412765502929688 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.009387969970703125 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.009363889694213867 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009303092956542969 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009469032287597656 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009335041046142578 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.00938272476196289 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.00940704345703125 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009377002716064453 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009462118148803711 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009454965591430664 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.008651971817016602 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.00872492790222168 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009180784225463867 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009124279022216797 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.008597850799560547 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 936, d: 11, and nval: 201
+======================================================================
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 0: 0.0089569091796875 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 1: 0.008651018142700195 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 2: 0.009438276290893555 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 3: 0.009049177169799805 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Time taken for round 4: 0.009001016616821289 seconds
+Using cheap batch size
+Optimal M batch size: 936
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+Skipping Classification_n_gt_10k (too slow for full grid)
+
+=== Tuning Classification_d_gt_50 ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.6285722255706787 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.5732359886169434 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.5217280387878418 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.49304914474487305 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.49749302864074707 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.44480466842651367 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.5434479713439941 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.49973392486572266 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5630011558532715 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.48462605476379395 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.4972498416900635 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.5488481521606445 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.5008609294891357 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5550458431243896 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.4701817035675049 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.48112010955810547 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.506019115447998 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.4743022918701172 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5647637844085693 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.5038809776306152 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.5720438957214355 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.5333576202392578 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.5152640342712402 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5538129806518555 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.48674511909484863 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.4949991703033447 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.5439560413360596 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.47521305084228516 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5460867881774902 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.48359036445617676 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.5067808628082275 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.5461087226867676 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.49593496322631836 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5508599281311035 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.5006380081176758 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.5099329948425293 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.72623610496521 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.47962284088134766 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5321080684661865 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.5208287239074707 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.654879093170166 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.6015019416809082 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.4725308418273926 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.5402910709381104 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.5020017623901367 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 4773, d: 95, and nval: 1023
+======================================================================
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 0: 0.4974548816680908 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 1: 0.5487501621246338 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 2: 0.4864959716796875 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 3: 0.47649312019348145 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Time taken for round 4: 0.5033659934997559 seconds
+Using cheap batch size
+Optimal M batch size: 4773
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Using hard routing for tree prediction
+
+=== Tuning Classification_Mixed ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.004882097244262695 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.004106044769287109 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.004177093505859375 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004010915756225586 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.0042018890380859375 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.004451274871826172 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.0043430328369140625 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.0042879581451416016 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004350900650024414 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.004277944564819336 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.004268169403076172 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.0042150020599365234 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.004272937774658203 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004312038421630859 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.0042400360107421875 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.0042722225189208984 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.004296064376831055 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.004252195358276367 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004254817962646484 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.004547834396362305 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.004310131072998047 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.004339933395385742 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.0042879581451416016 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004239082336425781 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.0042743682861328125 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.004322052001953125 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.004292011260986328 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.004297971725463867 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004249095916748047 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.004253864288330078 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.004294872283935547 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.004269838333129883 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.004224061965942383 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004225969314575195 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.004221200942993164 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.0042650699615478516 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.00426793098449707 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.0043141841888427734 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004227876663208008 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.0042269229888916016 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.0043141841888427734 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.0042591094970703125 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.004300117492675781 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004277944564819336 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.004297971725463867 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 642, d: 20, and nval: 138
+======================================================================
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 0: 0.00428318977355957 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 1: 0.004214048385620117 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 2: 0.004233360290527344 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 3: 0.004203081130981445 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Time taken for round 4: 0.004370927810668945 seconds
+Using cheap batch size
+Optimal M batch size: 642
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Using hard routing for tree prediction
+Skipping Regression_n_gt_10k (already tuned)
+Skipping Regression_d_gt_50 (already tuned)
+Skipping Regression_Mixed (already tuned)
+
+=== Tuning Classification_n_gt_10k ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+/Users/andy/Documents/Uni/COMP9417-Group-Project/.venv/lib/python3.12/site-packages/xrfm/xrfm.py:856: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  y = torch.as_tensor(y).to(self.device)
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 2.243222951889038 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 1.8543989658355713 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.813255786895752 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 1.93973708152771 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.9437179565429688 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:11<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 1, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 2.003068208694458 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 1.6892600059509277 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.6976282596588135 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 1.8726449012756348 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.763481855392456 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:10<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 1.7599239349365234 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 1.9659361839294434 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 2.0108001232147217 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 1.997302770614624 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.9133551120758057 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:11<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 5, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 1.9535748958587646 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 2.0890939235687256 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.817732810974121 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 2.1950650215148926 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.939500093460083 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:11<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 1.9946880340576172 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 2.075011730194092 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.923219919204712 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 2.0212128162384033 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.9576220512390137 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:12<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 10, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 1.9882278442382812 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 1.9166100025177002 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.8222053050994873 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 1.9978139400482178 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.925365924835205 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:11<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 2.004746198654175 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 2.1245908737182617 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 2.012507915496826 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 2.0650851726531982 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.8745768070220947 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:12<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 25, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 1.903616189956665 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 2.080230951309204 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.9140040874481201 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 1.884648084640503 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.7693970203399658 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:11<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': True, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 1.9086949825286865 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 1.9343469142913818 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.8131401538848877 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 1.895414113998413 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 1.846755027770996 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:11<?, ?it/s]
+Using hard routing for tree prediction
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 1.8783562183380127 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 1.9322669506072998 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 1.996819019317627 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 2.165809154510498 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 2.0127081871032715 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:11<?, ?it/s]
+Using hard routing for tree prediction
+Skipping Classification_d_gt_50 (already tuned)
+Skipping Classification_Mixed (already tuned)

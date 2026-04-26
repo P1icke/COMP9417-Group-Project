@@ -1,0 +1,38 @@
+Skipping Regression_n_gt_10k (already analyzed)
+Skipping Regression_d_gt_50 (already analyzed)
+Skipping Regression_Mixed (already analyzed)
+Skipping Classification_n_gt_10k (too slow)
+Skipping Classification_d_gt_50 (already analyzed)
+Skipping Classification_Mixed (already analyzed)
+Skipping Regression_n_gt_10k (already analyzed)
+Skipping Regression_d_gt_50 (already analyzed)
+Skipping Regression_Mixed (already analyzed)
+
+=== Classification_n_gt_10k ===
+{'model': {'kernel': 'l2_high_dim', 'exponent': 1.0, 'bandwidth': 100, 'diag': False, 'bandwidth_mode': 'constant'}, 'fit': {'get_agop_best_model': True, 'return_best_params': False, 'reg': 0.001, 'iters': 0, 'early_stop_rfm': False}}
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Building trees:   0%|          | 0/1 [00:12<?, ?it/s]
+======================================================================
+Fitting RFM with ntrain: 8631, d: 28, and nval: 1849
+======================================================================
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 0: 2.181241273880005 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 1: 1.945551872253418 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 2: 2.064610719680786 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 3: 2.0671839714050293 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Time taken for round 4: 2.0445568561553955 seconds
+Using cheap batch size
+Optimal M batch size: 8631
+Tree has no split, stopping training
+  saved 1 AGOP matrices (28 features) to results/agops/Classification_n_gt_10k.pt
+Skipping Classification_d_gt_50 (already analyzed)
+Skipping Classification_Mixed (already analyzed)
