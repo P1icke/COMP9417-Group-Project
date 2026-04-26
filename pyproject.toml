@@ -15,6 +15,7 @@ dependencies = [
     "xrfm>=0.4.3",
     "ipykernel>=6.29",
     "jupyter>=1.0",
+    "imbalanced-learn>=0.14.1",
 ]
 
 [tool.uv.sources]
