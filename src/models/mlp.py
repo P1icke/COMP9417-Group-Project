@@ -1,17 +1,14 @@
 import json
 from pathlib import Path
 
-from src.models.base_model import BaseModel
-from src.data_processor import get_prepared_data, _build_preprocessor
+import numpy as np
 from sklearn.neural_network import MLPClassifier, MLPRegressor
-from sklearn.pipeline import Pipeline
 from sklearn.metrics import precision_recall_curve
 from imblearn.pipeline import Pipeline as IMLPipeline
 from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
-import numpy as np
 
-TUNED_PARAMS_DIR = Path("tuned_params/mlp")
+from src.models.base_model import BaseModel
 
 
 class MLPAlgorithm(BaseModel):
@@ -58,27 +55,17 @@ class MLPAlgorithm(BaseModel):
             },
         }
 
-        params = self.hyperparameters.get(dataset_name)
-
-        # Override defaults with tuned_params/mlp/<dataset>.json if present —
-        # tune_mlp.py writes that file with the RandomizedSearchCV winner and,
-        # for imbalanced classification, the F1-optimised threshold.
         tuned_threshold = None
-        tuned_path = TUNED_PARAMS_DIR / f"{dataset_name}.json"
+        tuned_path = Path(f"tuned_params/mlp/{dataset_name}.json")
         if tuned_path.exists():
             with open(tuned_path) as f:
                 record = json.load(f)
-            tuned = dict(record.get("params", {}))
-            if "hidden_layer_sizes" in tuned and isinstance(tuned["hidden_layer_sizes"], list):
-                tuned["hidden_layer_sizes"] = tuple(tuned["hidden_layer_sizes"])
-            params = tuned
+            params = dict(record.get("params", {}))
+            if "hidden_layer_sizes" in params and isinstance(params["hidden_layer_sizes"], list):
+                params["hidden_layer_sizes"] = tuple(params["hidden_layer_sizes"])
             tuned_threshold = record.get("threshold")
-
-        # Reload raw splits so the model can own its own preprocess + resample
-        # pipeline. The deterministic split in get_prepared_data ensures these
-        # rows match the preprocessed splits main.py passes to train/predict.
-        self._raw = get_prepared_data(dataset_name, return_raw=True)
-        preprocessor = _build_preprocessor(self._raw[0])
+        else:
+            params = self.hyperparameters.get(dataset_name, {})
 
         self._tune_threshold = False
         self.threshold = tuned_threshold if tuned_threshold is not None else 0.5
@@ -86,39 +73,34 @@ class MLPAlgorithm(BaseModel):
         if self.task_type == "classification":
             mlp = MLPClassifier(**params, max_iter=2000, early_stopping=True, random_state=42)
             if dataset_name in self.IMBALANCED_DATASETS:
-                # 10:1 undersample then 2:1 SMOTE matches mlp_cv.ipynb's strategy
+                # 10:1 undersample then 2:1 SMOTE — matches mlp_cv.ipynb's strategy
                 # for highly imbalanced classification.
                 self.model = IMLPipeline([
-                    ('preprocess', preprocessor),
                     ('under', RandomUnderSampler(sampling_strategy=0.1, random_state=42)),
                     ('over', SMOTE(sampling_strategy=0.5, random_state=42)),
                     ('mlp', mlp),
                 ])
                 self._tune_threshold = True
             else:
-                self.model = Pipeline([('preprocess', preprocessor), ('mlp', mlp)])
+                self.model = mlp
         else:
-            mlp = MLPRegressor(**params, max_iter=2000, early_stopping=True, random_state=42)
-            self.model = Pipeline([('preprocess', preprocessor), ('mlp', mlp)])
+            self.model = MLPRegressor(**params, max_iter=2000, early_stopping=True, random_state=42)
 
     def train(self, X_train, y_train, X_val, y_val):
-        X_tr_raw, X_va_raw, _, y_tr, y_va, _ = self._raw
-        self.model.fit(X_tr_raw, y_tr)
+        self.model.fit(X_train, y_train)
 
         if self._tune_threshold:
-            val_prob = self.model.predict_proba(X_va_raw)[:, 1]
-            precision, recall, thresholds = precision_recall_curve(y_va, val_prob)
+            val_prob = self.model.predict_proba(X_val)[:, 1]
+            precision, recall, thresholds = precision_recall_curve(y_val, val_prob)
             f1 = 2 * precision * recall / (precision + recall + 1e-12)
             best_idx = int(np.argmax(f1[:-1]))
             self.threshold = thresholds[best_idx]
 
     def predict(self, X_test):
-        X_te_raw = self._raw[2]
         if self._tune_threshold:
-            prob = self.model.predict_proba(X_te_raw)[:, 1]
+            prob = self.model.predict_proba(X_test)[:, 1]
             return (prob >= self.threshold).astype(int)
-        return self.model.predict(X_te_raw)
+        return self.model.predict(X_test)
 
     def predict_proba(self, X_test):
-        X_te_raw = self._raw[2]
-        return self.model.predict_proba(X_te_raw)
+        return self.model.predict_proba(X_test)
