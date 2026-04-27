@@ -118,3 +118,7 @@ class MLPAlgorithm(BaseModel):
             prob = self.model.predict_proba(X_te_raw)[:, 1]
             return (prob >= self.threshold).astype(int)
         return self.model.predict(X_te_raw)
+
+    def predict_proba(self, X_test):
+        X_te_raw = self._raw[2]
+        return self.model.predict_proba(X_te_raw)
