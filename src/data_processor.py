@@ -33,8 +33,8 @@ DATASET_CONFIG = {
     "Classification_n_gt_10k": {
         "folder": "Classification_n_gt_10k",
         "file": "Classification_n_gt_10k.csv",
-        "target": "Class", 
-        "drop_cols": ["Time"], 
+        "target": "Revenue",
+        "drop_cols": [],
         "task": "classification"
     },
     "Classification_d_gt_50": {
