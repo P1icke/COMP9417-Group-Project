@@ -1,0 +1,14 @@
+{
+  "params": {
+    "activation": "tanh",
+    "alpha": 0.008111253665497063,
+    "hidden_layer_sizes": [
+      64,
+      32
+    ],
+    "learning_rate_init": 0.00015030900645056822
+  },
+  "cv_score": 0.9257358679484986,
+  "scoring": "roc_auc",
+  "threshold": 0.829563430482655
+}

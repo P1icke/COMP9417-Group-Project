@@ -1,0 +1,13 @@
+{
+  "params": {
+    "activation": "relu",
+    "alpha": 2.6422690597255385e-05,
+    "hidden_layer_sizes": [
+      128,
+      64
+    ],
+    "learning_rate_init": 0.004048966222584676
+  },
+  "cv_score": 0.9316116526454381,
+  "scoring": "roc_auc"
+}
