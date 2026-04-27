@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 from src.models.base_model import BaseModel
 from src.data_processor import get_prepared_data, _build_preprocessor
 from sklearn.neural_network import MLPClassifier, MLPRegressor
@@ -7,6 +10,9 @@ from imblearn.pipeline import Pipeline as IMLPipeline
 from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 import numpy as np
+
+TUNED_PARAMS_DIR = Path("tuned_params/mlp")
+
 
 class MLPAlgorithm(BaseModel):
     IMBALANCED_DATASETS = {"Classification_n_gt_10k", "Classification_d_gt_50"}
@@ -54,6 +60,20 @@ class MLPAlgorithm(BaseModel):
 
         params = self.hyperparameters.get(dataset_name)
 
+        # Override defaults with tuned_params/mlp/<dataset>.json if present —
+        # tune_mlp.py writes that file with the RandomizedSearchCV winner and,
+        # for imbalanced classification, the F1-optimised threshold.
+        tuned_threshold = None
+        tuned_path = TUNED_PARAMS_DIR / f"{dataset_name}.json"
+        if tuned_path.exists():
+            with open(tuned_path) as f:
+                record = json.load(f)
+            tuned = dict(record.get("params", {}))
+            if "hidden_layer_sizes" in tuned and isinstance(tuned["hidden_layer_sizes"], list):
+                tuned["hidden_layer_sizes"] = tuple(tuned["hidden_layer_sizes"])
+            params = tuned
+            tuned_threshold = record.get("threshold")
+
         # Reload raw splits so the model can own its own preprocess + resample
         # pipeline. The deterministic split in get_prepared_data ensures these
         # rows match the preprocessed splits main.py passes to train/predict.
@@ -61,7 +81,7 @@ class MLPAlgorithm(BaseModel):
         preprocessor = _build_preprocessor(self._raw[0])
 
         self._tune_threshold = False
-        self.threshold = 0.5
+        self.threshold = tuned_threshold if tuned_threshold is not None else 0.5
 
         if self.task_type == "classification":
             mlp = MLPClassifier(**params, max_iter=2000, early_stopping=True, random_state=42)
