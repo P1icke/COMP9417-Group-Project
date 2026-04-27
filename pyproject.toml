@@ -25,6 +25,6 @@ torch = [
 ]
 
 [[tool.uv.index]]
-name = 'pytorch-cu121'
-url = "https://download.pytorch.org/whl/cu126"
+name = 'pytorch-cu130'
+url = "https://download.pytorch.org/whl/cu130"
 explicit = true
