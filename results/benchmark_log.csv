@@ -1,3 +1,24 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:b7958cbf68d0055e9024e8da013f933b3a1049b9a6839a310c800e5378b0e775
 size 1071
+Regression_n_gt_10k,MLP,RMSE,4.0717,3.2474,1e-06
+Regression_d_gt_50,MLP,RMSE,32892.1596,0.8255,0.0
+Regression_Mixed,MLP,RMSE,4629.3937,0.2418,1e-06
+Classification_d_gt_50,MLP,Accuracy,0.9648,0.2634,1e-06,0.932
+Classification_Mixed,MLP,Accuracy,0.8623,0.0278,1e-06,0.9395
+Regression_n_gt_10k,MLP,RMSE,4.0717,3.2479,1e-06
+Regression_d_gt_50,MLP,RMSE,32892.1596,0.8195,0.0
+Regression_Mixed,MLP,RMSE,4629.3937,0.2405,1e-06
+Classification_d_gt_50,MLP,Accuracy,0.9648,0.2748,1e-06,0.932
+Classification_Mixed,MLP,Accuracy,0.8623,0.0267,1e-06,0.9395
+Regression_n_gt_10k,MLP,RMSE,4.0717,3.2396,1e-06
+Regression_d_gt_50,MLP,RMSE,32892.1596,0.815,0.0
+Regression_Mixed,MLP,RMSE,4629.3937,0.2468,1e-06
+Classification_d_gt_50,MLP,Accuracy,0.9648,0.2415,1e-06,0.932
+Classification_Mixed,MLP,Accuracy,0.8623,0.0267,1e-06,0.9395
+Regression_n_gt_10k,MLP,RMSE,4.0717,3.2501,1e-06
+Regression_d_gt_50,MLP,RMSE,32892.1596,0.816,0.0
+Regression_Mixed,MLP,RMSE,4629.3937,0.238,1e-06
+Classification_n_gt_10k,MLP,Accuracy,0.8778,0.7564,1e-06,0.9183
+Classification_d_gt_50,MLP,Accuracy,0.9658,0.0763,1e-06,0.908
+Classification_Mixed,MLP,Accuracy,0.8623,0.0279,1e-06,0.9395

@@ -76,7 +76,7 @@ class MLPAlgorithm(BaseModel):
                 # 10:1 undersample then 2:1 SMOTE — matches mlp_cv.ipynb's strategy
                 # for highly imbalanced classification.
                 self.model = IMLPipeline([
-                    ('under', RandomUnderSampler(sampling_strategy=0.1, random_state=42)),
+                    ('under', RandomUnderSampler(sampling_strategy=0.2, random_state=42)),
                     ('over', SMOTE(sampling_strategy=0.5, random_state=42)),
                     ('mlp', mlp),
                 ])
