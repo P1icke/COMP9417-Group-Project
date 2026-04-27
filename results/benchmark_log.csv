@@ -11,3 +11,8 @@ Regression_Mixed,XGBoost,RMSE,4383.8767,0.0184,2e-06
 Classification_n_gt_10k,XGBoost,Accuracy,0.8627,2.8575,3e-06,0.9307
 Classification_d_gt_50,XGBoost,Accuracy,0.9609,0.2262,1e-06,0.9151
 Classification_Mixed,XGBoost,Accuracy,0.8551,0.0576,3e-06,0.9365
+Regression_n_gt_10k,MLP,RMSE,4.0712,3.7065,1e-06
+Regression_d_gt_50,MLP,RMSE,32892.1596,1.0119,0.0
+Regression_Mixed,MLP,RMSE,4629.3937,0.2531,1e-06
+Classification_d_gt_50,MLP,Accuracy,0.9648,0.243,1e-06,0.932
+Classification_Mixed,MLP,Accuracy,0.8623,0.0284,1e-06,0.9395
