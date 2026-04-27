@@ -78,6 +78,11 @@ class XGBoostAlgorithm(BaseModel):
 
     def predict(self, X_test):
         return self.model.predict(X_test)
+    
+    def predict_proba(self, X_test):
+        if self.task_type == "classification":
+            return self.model.predict_proba(X_test)
+        raise NotImplementedError("predict_proba is only available for classification tasks")
 
     def predict_proba(self, X_test):
         return self.model.predict_proba(X_test)

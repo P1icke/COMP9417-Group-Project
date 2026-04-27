@@ -1,10 +1,14 @@
 import json
+import sys
 import time
 from pathlib import Path
 
 import numpy as np
 from sklearn.metrics import accuracy_score, root_mean_squared_error
 from xrfm import xRFM
+
+# Add parent directory to path to allow imports from src
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.data_processor import get_prepared_data, DATASET_CONFIG
 

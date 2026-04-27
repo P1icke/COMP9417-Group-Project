@@ -1,4 +1,8 @@
 import numpy as np
+import torch
+
+# Disable CUDA to avoid GPU compatibility issues
+torch.cuda.is_available = lambda: False
 
 from src.models.base_model import BaseModel
 from xrfm import xRFM

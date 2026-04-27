@@ -1,0 +1,9 @@
+{
+  "params": {
+    "n_estimators": 50,
+    "max_depth": 10,
+    "min_samples_split": 5,
+    "min_samples_leaf": 1
+  },
+  "score": 0.9808191254541525
+}
