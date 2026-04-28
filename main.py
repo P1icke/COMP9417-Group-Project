@@ -2,6 +2,7 @@ import argparse
 import os
     
 import pandas as pd
+import datetime as dt
 
 from src.data_processor import get_prepared_data, DATASET_CONFIG
 from src.evaluator import evaluate_model
@@ -15,6 +16,15 @@ def main():
     parser.add_argument("--algo", type=str, help="Run a specific algorithm (e.g., 'MLP')")
     parser.add_argument("--dataset", type=str, help="Run a specific dataset (e.g., 'Regression_Mixed')")
     args = parser.parse_args()
+    log_columns_names = [
+        'Dataset',
+        'Algorithm',
+        'Metric Type',
+        'Test Score',
+        'Training Time (s)',
+        'Inference Time per sample (s)',
+        'AUC-ROC'
+    ]
 
     os.makedirs("results", exist_ok=True)
     all_results = []
@@ -70,12 +80,13 @@ def main():
             
             if result:
                 all_results.append(result)
-                # in case of a crash, append the CSV so we still get partial results
-                csv_path = "results/benchmark_log.csv"
+                # For each new test, create a new benchmark log
+                # In case of a crash, append the CSV so we still get partial results
+                csv_path = f'results/benchmark_log_{dt.datetime.now().isoformat()}.csv'
                 pd.DataFrame([result]).to_csv(
                     csv_path,
-                    mode="a",
-                    header=not os.path.exists(csv_path),
+                    mode="w",
+                    header=log_columns_names,
                     index=False,
                 )
 
