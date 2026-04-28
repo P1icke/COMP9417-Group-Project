@@ -1,6 +1,6 @@
 import argparse
 import os
-    
+import datetime as dt
 import pandas as pd
 
 from src.data_processor import get_prepared_data, DATASET_CONFIG
@@ -15,6 +15,15 @@ def main():
     parser.add_argument("--algo", type=str, help="Run a specific algorithm (e.g., 'MLP')")
     parser.add_argument("--dataset", type=str, help="Run a specific dataset (e.g., 'Regression_Mixed')")
     args = parser.parse_args()
+    log_columns_name = [
+        'Dataset',
+        'Algorithm',
+        'Metric Type',
+        'Test Score',
+        'Training Time (s)',
+        'Inference Time per sample (s)',
+        'AUC-ROC'
+    ]
 
     os.makedirs("results", exist_ok=True)
     all_results = []
@@ -71,10 +80,11 @@ def main():
             if result:
                 all_results.append(result)
                 # in case of a crash, append the CSV so we still get partial results
-                csv_path = "results/benchmark_log.csv"
-                pd.DataFrame([result]).to_csv(
+                csv_path = f"results/benchmark_log_{dt.datetime.now().isoformat()}.csv"
+                results_df = pd.DataFrame([result], columns=log_columns_name)
+                results_df.to_csv(
                     csv_path,
-                    mode="a",
+                    mode="w",
                     header=not os.path.exists(csv_path),
                     index=False,
                 )
