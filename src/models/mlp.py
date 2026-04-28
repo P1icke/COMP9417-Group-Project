@@ -97,6 +97,9 @@ class MLPAlgorithm(BaseModel):
             self.threshold = thresholds[best_idx]
 
     def predict(self, X_test):
+        if self.task_type == "classification" and self.threshold != 0.5:
+            probs = self.model.predict_proba(X_test)[:, 1]
+            return (probs >= self.threshold).astype(int)
         return self.model.predict(X_test)
     
     def predict_proba(self, X_test):
