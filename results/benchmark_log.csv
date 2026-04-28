@@ -23,3 +23,15 @@ Classification_Mixed,MLP,Accuracy,0.8696,0.0473,2e-06,0.9331
 Classification_Mixed,XGBoost,Accuracy,0.8551,0.036,5e-06,0.9365
 Classification_Mixed,xRFM,Accuracy,0.8841,0.0151,4e-06,0.9405
 Classification_Mixed,RandomForest,Accuracy,0.8986,0.1762,0.000237,0.9537
+Regression_n_gt_10k,MLP,RMSE,3.9862,5.6975,0.0,
+Regression_d_gt_50,MLP,RMSE,34667.4054,0.3816,1e-06,
+Regression_Mixed,MLP,RMSE,4999.0887,0.4445,1e-06,
+Classification_n_gt_10k,MLP,Accuracy,0.887,0.7064,1e-06,0.925
+Classification_d_gt_50,MLP,Accuracy,0.911,0.1612,1e-06,0.9317
+Classification_Mixed,MLP,Accuracy,0.8696,0.0237,1e-06,0.9331
+Regression_n_gt_10k,MLP,RMSE,3.9862,5.7129,0.0,
+Regression_d_gt_50,MLP,RMSE,34667.4054,0.382,1e-06,
+Regression_Mixed,MLP,RMSE,4999.0887,0.4452,1e-06,
+Classification_n_gt_10k,MLP,Accuracy,0.887,0.6835,1e-06,0.925
+Classification_d_gt_50,MLP,Accuracy,0.911,0.1628,1e-06,0.9317
+Classification_Mixed,MLP,Accuracy,0.8696,0.0238,1e-06,0.9331

@@ -2,18 +2,13 @@ import json
 from pathlib import Path
 
 import numpy as np
-from sklearn.neural_network import MLPClassifier, MLPRegressor
 from sklearn.metrics import precision_recall_curve
-from imblearn.pipeline import Pipeline as IMLPipeline
-from imblearn.over_sampling import SMOTE
-from imblearn.under_sampling import RandomUnderSampler
-
+from experiments.tune_mlp import build_search_pipeline, is_imbalanced
+from src.data_processor import get_prepared_data
 from src.models.base_model import BaseModel
 
 
 class MLPAlgorithm(BaseModel):
-    IMBALANCED_DATASETS = {"Classification_n_gt_10k", "Classification_d_gt_50"}
-
     def __init__(self, dataset_name, task_type):
         super().__init__(dataset_name, task_type)
         self.hyperparameters = {
@@ -70,21 +65,11 @@ class MLPAlgorithm(BaseModel):
         self._tune_threshold = False
         self.threshold = tuned_threshold if tuned_threshold is not None else 0.5
 
-        if self.task_type == "classification":
-            mlp = MLPClassifier(**params, max_iter=2000, early_stopping=True, random_state=42)
-            if dataset_name in self.IMBALANCED_DATASETS:
-                # 10:1 undersample then 2:1 SMOTE — matches mlp_cv.ipynb's strategy
-                # for highly imbalanced classification.
-                self.model = IMLPipeline([
-                    ('under', RandomUnderSampler(sampling_strategy=0.2, random_state=42)),
-                    ('over', SMOTE(sampling_strategy=0.5, random_state=42)),
-                    ('mlp', mlp),
-                ])
-                self._tune_threshold = True
-            else:
-                self.model = mlp
-        else:
-            self.model = MLPRegressor(**params, max_iter=2000, early_stopping=True, random_state=42)
+        X_train, X_val, X_test, y_train, y_val, y_test = get_prepared_data(dataset_name)
+        self.model, label = build_search_pipeline(task_type, X_train, y_train, params, preprocess=False)
+
+        if is_imbalanced(label):
+            self._tune_threshold = True
 
     def train(self, X_train, y_train, X_val, y_val):
         self.model.fit(X_train, y_train)

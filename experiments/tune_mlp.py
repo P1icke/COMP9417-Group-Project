@@ -124,14 +124,16 @@ def is_imbalanced(label: ImbalanceLabels) -> bool:
     }
 
 
-def build_search_pipeline(task_type: str, X_train, y_train):
+def build_search_pipeline(task_type: str, X_train, y_train, params=None, preprocess=True):
     """Pipeline used during RandomizedSearchCV — params are injected by the
     search, so the estimator is constructed without them."""
-    preprocessor = _build_preprocessor(X_train)
+    if params is None:
+        params = {}
+    preprocessor = _build_preprocessor(X_train) if preprocess else None
 
     if task_type == "classification":
         label = imbalance_severity(y_train)
-        mlp = MLPClassifier(max_iter=2000, early_stopping=True, random_state=42)
+        mlp = MLPClassifier(**params, max_iter=2000, early_stopping=True, random_state=42)
 
         if label == ImbalanceLabels.MODERATE_IMBALANCE:
             return IMLPipeline([
@@ -150,7 +152,7 @@ def build_search_pipeline(task_type: str, X_train, y_train):
 
     return Pipeline([
         ("preprocess", preprocessor),
-        ("mlp", MLPRegressor(max_iter=2000, early_stopping=True, random_state=42)),
+        ("mlp", MLPRegressor(**params, max_iter=2000, early_stopping=True, random_state=42)),
     ]), None
 
 
