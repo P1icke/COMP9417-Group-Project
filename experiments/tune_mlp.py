@@ -216,7 +216,7 @@ def tune_dataset(dataset_name: str, config: dict) -> None:
         cv=cv,
         scoring=scoring,
         n_jobs=-1,
-        random_state={hash(dataset_name) % 2**32},
+        random_state=42,
     )
 
     print(f"Fitting RandomizedSearchCV (n_iter=60, scoring={scoring})...")
