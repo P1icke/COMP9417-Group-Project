@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3514dfe64395ec571c6fdb469546bb72f9f30663055a6258cc8846cf693b81dc
-size 3934
+Regression_n_gt_10k,MLP,RMSE,4.0048,12.6729,1e-06,
+Regression_n_gt_10k,XGBoost,RMSE,3.5587,7.4946,4e-06,
+Regression_n_gt_10k,xRFM,RMSE,3.1589,3.9876,6e-06,
+Regression_n_gt_10k,RandomForest,RMSE,3.5879,0.9659,6e-06,
+Regression_d_gt_50,MLP,RMSE,35433.6033,1.2524,2e-06,
+Regression_d_gt_50,XGBoost,RMSE,24375.2051,0.8825,5e-06,
+Regression_d_gt_50,xRFM,RMSE,26662.6074,0.0428,4.8e-05,
+Regression_d_gt_50,RandomForest,RMSE,26053.1335,0.1837,7.3e-05,
+Regression_Mixed,MLP,RMSE,4774.5813,0.5949,1e-06,
+Regression_Mixed,XGBoost,RMSE,4383.8767,0.0114,3e-06,
+Regression_Mixed,xRFM,RMSE,4658.7044,0.0194,2e-06,
+Regression_Mixed,RandomForest,RMSE,4523.9377,0.1395,0.000181,
+Classification_n_gt_10k,MLP,Accuracy,0.8849,2.4821,1e-06,0.926
+Classification_n_gt_10k,XGBoost,Accuracy,0.8632,2.909,3e-06,0.9305
+Classification_n_gt_10k,xRFM,Accuracy,0.8924,0.2746,1e-06,0.9152
+Classification_n_gt_10k,RandomForest,Accuracy,0.9038,0.2912,2.5e-05,0.9253
+Classification_d_gt_50,MLP,Accuracy,0.8368,0.1571,1e-06,0.908
+Classification_d_gt_50,XGBoost,Accuracy,0.9609,0.264,1e-06,0.9151
+Classification_d_gt_50,xRFM,Accuracy,0.9658,0.0998,1e-06,0.799
+Classification_d_gt_50,RandomForest,Accuracy,0.9687,0.2703,4.4e-05,0.9327
+Classification_Mixed,MLP,Accuracy,0.8623,0.069,2e-06,0.9395
+Classification_Mixed,XGBoost,Accuracy,0.8551,0.0372,5e-06,0.9365
+Classification_Mixed,xRFM,Accuracy,0.8841,0.0149,3e-06,0.9405
+Classification_Mixed,RandomForest,Accuracy,0.8986,0.2046,0.000264,0.9537
