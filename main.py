@@ -80,7 +80,7 @@ def main():
             if result:
                 all_results.append(result)
                 # in case of a crash, append the CSV so we still get partial results
-                csv_path = f"results/benchmark_log_{dt.datetime.now().isoformat()}.csv"
+                csv_path = f"results/benchmark/benchmark_log_{dt.datetime.now().isoformat()}.csv"
                 results_df = pd.DataFrame([result], columns=log_columns_name)
                 results_df.to_csv(
                     csv_path,
