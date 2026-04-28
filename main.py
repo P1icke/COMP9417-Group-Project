@@ -23,7 +23,6 @@ def main():
         'Test Score',
         'Training Time (s)',
         'Inference Time per sample (s)',
-        'AUC-ROC'
     ]
 
     os.makedirs("results", exist_ok=True)
