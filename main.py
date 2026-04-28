@@ -2,6 +2,7 @@ import argparse
 import os
 import datetime as dt
 import pandas as pd
+from pathlib import Path
 
 from src.data_processor import get_prepared_data, DATASET_CONFIG
 from src.evaluator import evaluate_model
@@ -24,6 +25,9 @@ def main():
         'Inference Time per sample (s)',
         'AUC-ROC'
     ]
+
+    BENCHMARK_RESULTS_DIR = Path("results/benchmark")
+    BENCHMARK_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     os.makedirs("results", exist_ok=True)
     all_results = []
