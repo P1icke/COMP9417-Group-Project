@@ -1,3 +1,8 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:3514dfe64395ec571c6fdb469546bb72f9f30663055a6258cc8846cf693b81dc
 size 3934
+Regression_n_gt_10k,RandomForest,RMSE,3.5419,13.9444,4e-05
+Regression_d_gt_50,RandomForest,RMSE,25644.0781,0.2798,3.1e-05
+Regression_Mixed,RandomForest,RMSE,4479.4335,0.1866,0.000126
+Classification_d_gt_50,RandomForest,Accuracy,0.9687,0.1651,0.000102,0.9079
+Classification_Mixed,RandomForest,Accuracy,0.8913,0.0454,0.0001,0.9533

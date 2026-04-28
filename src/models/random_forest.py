@@ -1,20 +1,29 @@
-from src.models.base_model import BaseModel
-from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+import json
+from pathlib import Path
+
 import numpy as np
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+
+from src.models.base_model import BaseModel
+
 
 class RandomForestAlgorithm(BaseModel):
+    DEFAULT_PARAMS = {
+        "n_estimators": 100,
+        "max_depth": 20,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2,
+    }
+
     def __init__(self, dataset_name, task_type):
-        super().__init__(dataset_name, task_type)      
-        self.hyperparameters = {
-            "Regression_n_gt_10k":      {"n_estimators": 100, "max_depth": 20, "min_samples_split": 5, "min_samples_leaf": 2},
-            "Regression_d_gt_50":       {"n_estimators": 100, "max_depth": 20, "min_samples_split": 5, "min_samples_leaf": 2},
-            "Regression_Mixed":         {"n_estimators": 100, "max_depth": 20, "min_samples_split": 5, "min_samples_leaf": 2},
-            "Classification_n_gt_10k":  {"n_estimators": 100, "max_depth": 20, "min_samples_split": 5, "min_samples_leaf": 2},
-            "Classification_d_gt_50":   {"n_estimators": 100, "max_depth": 20, "min_samples_split": 5, "min_samples_leaf": 2},
-            "Classification_Mixed":     {"n_estimators": 100, "max_depth": 20, "min_samples_split": 5, "min_samples_leaf": 2},
-        }
-        
-        params = self.hyperparameters.get(dataset_name)
+        super().__init__(dataset_name, task_type)
+
+        tuned_path = Path(f"tuned_params/random_forest/{dataset_name}.json")
+        if tuned_path.exists():
+            with open(tuned_path) as f:
+                params = json.load(f)["params"]
+        else:
+            params = dict(self.DEFAULT_PARAMS)
         
         if self.task_type == "classification":
             self.model = RandomForestClassifier(
