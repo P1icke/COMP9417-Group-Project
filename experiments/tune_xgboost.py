@@ -10,12 +10,16 @@ where the majority baseline is 99.83%); regression uses RMSE.
 """
 
 import json
+import sys
 from itertools import product
 from pathlib import Path
 
 import numpy as np
 from sklearn.metrics import roc_auc_score, root_mean_squared_error
 from xgboost import XGBClassifier, XGBRegressor
+
+# Add parent directory to path to allow imports from src
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.data_processor import DATASET_CONFIG, get_prepared_data
 

@@ -8,7 +8,7 @@ from src.evaluator import evaluate_model
 from src.models.mlp import MLPAlgorithm
 from src.models.xgboost import XGBoostAlgorithm
 from src.models.xrfm import xRFMAlgorithm
-from src.models.tabnet import TabNetAlgorithm
+from src.models.random_forest import RandomForestAlgorithm
 
 def main():
     parser = argparse.ArgumentParser(description="Run ML Benchmark Pipeline")
@@ -43,7 +43,7 @@ def main():
             "MLP": MLPAlgorithm(dataset_name=dataset_name, task_type=task),
             "XGBoost": XGBoostAlgorithm(dataset_name=dataset_name, task_type=task),
             "xRFM": xRFMAlgorithm(dataset_name=dataset_name, task_type=task),
-            "TabNet": TabNetAlgorithm(dataset_name=dataset_name, task_type=task),
+            "RandomForest": RandomForestAlgorithm(dataset_name=dataset_name, task_type=task),
         }
 
         if args.algo:
