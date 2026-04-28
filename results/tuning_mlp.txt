@@ -1,101 +1,107 @@
 
-========= MLP tuning run @ 2026-04-27 09:25:36 =========
+========= MLP tuning run @ 2026-04-28 05:51:02 =========
 
 === Tuning Regression_n_gt_10k ===
 Loading & processing dataset...
 Fitting RandomizedSearchCV (n_iter=60, scoring=r2)...
-Search finished in 320.9s
+
+========= MLP tuning run @ 2026-04-28 05:55:54 =========
+
+=== Tuning Regression_n_gt_10k ===
+Loading & processing dataset...
+Fitting RandomizedSearchCV (n_iter=60, scoring=r2)...
+Search finished in 178.2s
 Best parameters:
 {'activation': 'relu',
- 'alpha': np.float64(0.00011957746304562952),
+ 'alpha': np.float64(0.0017422076439004893),
  'hidden_layer_sizes': (128, 64),
- 'learning_rate_init': np.float64(0.007688106801474953)}
-Best CV score (r2): 0.5676
-Test R^2:  0.5922
-Test RMSE: 3.9389
+ 'learning_rate_init': np.float64(0.005206964564152791)}
+Best CV score (r2): 0.5764
+Test R^2:  0.5832
+Test RMSE: 3.9825
 Saved tuned params -> tuned_params/mlp/Regression_n_gt_10k.json
 
 === Tuning Regression_d_gt_50 ===
 Loading & processing dataset...
 Fitting RandomizedSearchCV (n_iter=60, scoring=r2)...
-Search finished in 39.6s
+Search finished in 36.5s
 Best parameters:
 {'activation': 'relu',
- 'alpha': np.float64(0.00011957746304562952),
+ 'alpha': np.float64(0.0003793138146475115),
  'hidden_layer_sizes': (128, 64),
- 'learning_rate_init': np.float64(0.007688106801474953)}
-Best CV score (r2): 0.8417
-Test R^2:  0.8415
-Test RMSE: 33801.5644
+ 'learning_rate_init': np.float64(0.009455944079647307)}
+Best CV score (r2): 0.8449
+Test R^2:  0.8487
+Test RMSE: 33022.0776
 Saved tuned params -> tuned_params/mlp/Regression_d_gt_50.json
 
 === Tuning Regression_Mixed ===
 Loading & processing dataset...
 Fitting RandomizedSearchCV (n_iter=60, scoring=r2)...
-Search finished in 21.9s
+Search finished in 18.6s
 Best parameters:
 {'activation': 'relu',
- 'alpha': np.float64(0.00011957746304562952),
+ 'alpha': np.float64(0.000105906032149672),
  'hidden_layer_sizes': (128, 64),
- 'learning_rate_init': np.float64(0.007688106801474953)}
-Best CV score (r2): 0.8210
-Test R^2:  0.7610
-Test RMSE: 6020.2614
+ 'learning_rate_init': np.float64(0.0031648209017287703)}
+Best CV score (r2): 0.7960
+Test R^2:  0.7601
+Test RMSE: 6032.0870
 Saved tuned params -> tuned_params/mlp/Regression_Mixed.json
 
 === Tuning Classification_n_gt_10k ===
 Loading & processing dataset...
 Imbalance: moderate_imbalance
 Fitting RandomizedSearchCV (n_iter=60, scoring=roc_auc)...
-Search finished in 21.5s
+Search finished in 13.1s
 Best parameters:
 {'activation': 'tanh',
- 'alpha': np.float64(1.536960311060883e-05),
+ 'alpha': np.float64(0.021259979622394374),
  'hidden_layer_sizes': (128, 64),
- 'learning_rate_init': np.float64(0.0005404103854647331)}
-Best CV score (roc_auc): 0.9244
+ 'learning_rate_init': np.float64(0.0007914568503215461)}
+Best CV score (roc_auc): 0.9240
 Tuning classification threshold on validation set...
-Best threshold: 0.531967
-Validation F1:        0.6350
-Validation Precision: 0.6172
-Validation Recall:    0.6538
-Test AUC-ROC: 0.9225
-Test F1 @ tuned threshold: 0.6634
+Best threshold: 0.462272
+Validation F1:        0.6472
+Validation Precision: 0.6049
+Validation Recall:    0.6958
+Test AUC-ROC: 0.9250
+Test F1 @ tuned threshold: 0.6646
 Saved tuned params -> tuned_params/mlp/Classification_n_gt_10k.json
 
 === Tuning Classification_d_gt_50 ===
 Loading & processing dataset...
 Imbalance: severe_imbalance
 Fitting RandomizedSearchCV (n_iter=60, scoring=roc_auc)...
-Search finished in 5.8s
+Search finished in 4.4s
 Best parameters:
 {'activation': 'tanh',
- 'alpha': np.float64(0.008111253665497063),
+ 'alpha': np.float64(3.7549955947138935e-05),
  'hidden_layer_sizes': (64, 32),
- 'learning_rate_init': np.float64(0.00015030900645056822)}
-Best CV score (roc_auc): 0.9257
+ 'learning_rate_init': np.float64(0.00019665350600176499)}
+Best CV score (roc_auc): 0.9256
 Tuning classification threshold on validation set...
-Best threshold: 0.829563
-Validation F1:        0.3824
-Validation Precision: 0.3714
-Validation Recall:    0.3939
-Test AUC-ROC: 0.9320
-Test F1 @ tuned threshold: 0.4375
+Best threshold: 0.731444
+Validation F1:        0.3820
+Validation Precision: 0.3036
+Validation Recall:    0.5152
+Test AUC-ROC: 0.9317
+Test F1 @ tuned threshold: 0.4000
 Saved tuned params -> tuned_params/mlp/Classification_d_gt_50.json
 
 === Tuning Classification_Mixed ===
 Loading & processing dataset...
 Imbalance: balanced
 Fitting RandomizedSearchCV (n_iter=60, scoring=roc_auc)...
-Search finished in 1.2s
+Search finished in 0.9s
 Best parameters:
 {'activation': 'relu',
- 'alpha': np.float64(2.6422690597255385e-05),
+ 'alpha': np.float64(0.06863801941740998),
  'hidden_layer_sizes': (128, 64),
- 'learning_rate_init': np.float64(0.004048966222584676)}
-Best CV score (roc_auc): 0.9316
-Test AUC-ROC: 0.9493
-Test F1 @ default threshold: 0.8611
+ 'learning_rate_init': np.float64(0.006913307884169086)}
+Best CV score (roc_auc): 0.9297
+Test AUC-ROC: 0.9535
+Test F1 @ default threshold: 0.8472
 Saved tuned params -> tuned_params/mlp/Classification_Mixed.json
 
 Done.
