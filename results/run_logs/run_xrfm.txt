@@ -3,4 +3,40 @@ Starting Benchmark Pipeline...
 Loading and processing: Regression_n_gt_10k...
   -> Training xRFM...
 Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [26:17<?, ?it/s]
+Loading and processing: Regression_d_gt_50...
+  -> Training xRFM...
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Tree has no split, stopping training
 Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Loading and processing: Regression_Mixed...
+  -> Training xRFM...
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+Loading and processing: Classification_n_gt_10k...
+  -> Training xRFM...
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:13<?, ?it/s]
+Loading and processing: Classification_d_gt_50...
+  -> Training xRFM...
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:03<?, ?it/s]
+Loading and processing: Classification_Mixed...
+  -> Training xRFM...
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Tree has no split, stopping training
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]
+
+Run Summary:
+
+                Dataset Algorithm Metric Type  Test Score  Training Time (s)  Inference Time per sample (s)  AUC-ROC
+    Regression_n_gt_10k      xRFM        RMSE      3.1567          1577.1380                       0.000112      NaN
+     Regression_d_gt_50      xRFM        RMSE  23887.4219             0.4053                       0.000009      NaN
+       Regression_Mixed      xRFM        RMSE   4661.5047             0.0749                       0.000004      NaN
+Classification_n_gt_10k      xRFM    Accuracy      0.8935            13.7379                       0.000029   0.9180
+ Classification_d_gt_50      xRFM    Accuracy      0.9658             3.8735                       0.000014   0.7990
+   Classification_Mixed      xRFM    Accuracy      0.8841             0.0286                       0.000003   0.9403
