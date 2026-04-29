@@ -18,6 +18,14 @@ Testing:
 2. Run on a single model with flag --algo, e.g "uv run python main.py --algo mlp"
 3. Run on a single dataset with flag --dataset, e.g "uv run python main.py --dataset regression_mixed"
 
+Full benchmark sweep:
+Use `run_full_benchmark.sh` to produce one internally-consistent `results/benchmark_log.csv` from a single sweep. It deletes the existing CSV, then runs MLP → RandomForest → XGBoost → xRFM in sequence (xRFM last because CASP alone takes ~11 min; the other three finish in seconds, so their rows land in the CSV early). Each model's stdout is teed to `results/run_logs/run_<model>.txt`. Wraps each invocation in `caffeinate -i` to block idle sleep on macOS — Linux/Windows users can drop the `caffeinate -i` prefix.
+
+1. Make the script executable once: "chmod +x run_full_benchmark.sh"
+2. Run it: "./run_full_benchmark.sh"
+
+Run the tuners (see Experiments below) before the sweep so the wrappers pick up the tuned params.
+
 Experiments:
 Tuners, trainers and analysis scripts live under experiments/ and are invoked as modules so imports from src/ resolve correctly.
 

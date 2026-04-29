@@ -1,0 +1,13 @@
+dataset,n,model,train_time,infer_time_per_sample,RMSE
+Regression_n_gt_10k,1000,xRFM,0.2858,3e-06,4.645
+Regression_n_gt_10k,1000,XGBoost,0.8621,1e-06,5.0912
+Regression_n_gt_10k,1000,RandomForest,0.2843,9e-06,4.8227
+Regression_n_gt_10k,1000,MLP,1.041,0.0,4.96
+Regression_n_gt_10k,2500,xRFM,0.7141,1.1e-05,4.2713
+Regression_n_gt_10k,2500,XGBoost,2.2776,3e-06,4.5515
+Regression_n_gt_10k,2500,RandomForest,0.6391,9e-06,4.4541
+Regression_n_gt_10k,2500,MLP,2.4835,0.0,6.7047
+Regression_n_gt_10k,5000,xRFM,3.2816,2.5e-05,3.9581
+Regression_n_gt_10k,5000,XGBoost,3.1184,4e-06,4.2265
+Regression_n_gt_10k,5000,RandomForest,1.5792,1.1e-05,4.1967
+Regression_n_gt_10k,5000,MLP,1.7592,0.0,4.5631
