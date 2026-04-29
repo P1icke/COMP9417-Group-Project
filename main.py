@@ -1,7 +1,8 @@
 import argparse
 import os
-    
+import datetime as dt
 import pandas as pd
+from pathlib import Path
 
 from src.data_processor import get_prepared_data, DATASET_CONFIG
 from src.evaluator import evaluate_model
@@ -15,6 +16,15 @@ def main():
     parser.add_argument("--algo", type=str, help="Run a specific algorithm (e.g., 'MLP')")
     parser.add_argument("--dataset", type=str, help="Run a specific dataset (e.g., 'Regression_Mixed')")
     args = parser.parse_args()
+    log_columns_name = [
+        'Dataset',
+        'Algorithm',
+        'Metric Type',
+        'Test Score',
+        'Training Time (s)',
+        'Inference Time per sample (s)',
+        'AUC-ROC'
+    ]
 
     os.makedirs("results", exist_ok=True)
     all_results = []
@@ -24,7 +34,7 @@ def main():
     datasets_to_run = DATASET_CONFIG.items()
     if args.dataset:
         datasets_to_run = {k: v for k, v in DATASET_CONFIG.items() if args.dataset.lower() in k.lower()}.items()
-        
+
         if not datasets_to_run:
             print(f" Error: Could not find any dataset matching '{args.dataset}'")
             return
@@ -48,7 +58,7 @@ def main():
 
         if args.algo:
             models_to_run = {k: v for k, v in models_to_run.items() if args.algo.lower() in k.lower()}
-            
+
             if not models_to_run:
                 print(f"Error: Could not find any algorithm matching '{args.algo}'")
                 continue
@@ -58,7 +68,7 @@ def main():
                 print(f"  -> {algo_name} (PLACEHOLDER - not implemented)")
             else:
                 print(f"  -> Training {algo_name}...")
-            
+
             result = evaluate_model(
                 model_instance=model_instance,
                 X_train=X_tr, y_train=y_tr,
@@ -67,12 +77,13 @@ def main():
                 dataset_name=dataset_name,
                 algorithm_name=algo_name
             )
-            
+
             if result:
                 all_results.append(result)
                 # in case of a crash, append the CSV so we still get partial results
-                csv_path = "results/benchmark_log.csv"
-                pd.DataFrame([result]).to_csv(
+                csv_path = f"results/benchmark_log.csv"
+                results_df = pd.DataFrame([result], columns=log_columns_name)
+                results_df.to_csv(
                     csv_path,
                     mode="a",
                     header=not os.path.exists(csv_path),

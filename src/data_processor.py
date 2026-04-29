@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
@@ -55,7 +55,7 @@ DATASET_CONFIG = {
 
 def _build_preprocessor(X):
     """Dynamically builds a scikit-learn ColumnTransformer based on column datatypes."""
-    numeric_features = X.select_dtypes(include=['int64', 'float64', 'bool']).columns.tolist()
+    numeric_features = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
     categorical_features = X.select_dtypes(include=['object', 'category', 'str', 'string']).columns.tolist()
 
     numeric_transformer = Pipeline(steps=[
@@ -76,7 +76,7 @@ def _build_preprocessor(X):
     
     return preprocessor
 
-def get_prepared_data(dataset_name, val_size=0.15, test_size=0.15, random_state=42):
+def get_prepared_data(dataset_name, val_size=0.15, test_size=0.15, random_state=42, return_raw=False):
     """
     Loads, cleans, splits, and preprocesses a specified dataset into Train, Val, and Test sets.
     """
@@ -110,23 +110,25 @@ def get_prepared_data(dataset_name, val_size=0.15, test_size=0.15, random_state=
     X_val_raw, X_test_raw, y_val, y_test = train_test_split(
         X_temp_raw, y_temp, test_size=test_ratio, random_state=random_state, stratify=stratify_col_temp
     )
-    
-    preprocessor = _build_preprocessor(X_train_raw)
-    
-    X_train = preprocessor.fit_transform(X_train_raw)
-    X_val = preprocessor.transform(X_val_raw)
-    X_test = preprocessor.transform(X_test_raw)
-    
+
     if y_train.dtype == 'object' or y_train.dtype.name == 'category':
-        y_train = y_train.astype('category').cat.codes
-        y_val = y_val.astype('category').cat.codes
-        y_test = y_test.astype('category').cat.codes
+        le = LabelEncoder().fit(y_train)
+        y_train, y_val, y_test = le.transform(y_train), le.transform(y_val), le.transform(y_test)
     elif y_train.dtype == 'bool':
         y_train = y_train.astype(int)
         y_val = y_val.astype(int)
         y_test = y_test.astype(int)
 
-    return X_train, X_val, X_test, y_train.values, y_val.values, y_test.values
+    if not return_raw:
+        preprocessor = _build_preprocessor(X_train_raw)
+
+        X_train = preprocessor.fit_transform(X_train_raw)
+        X_val = preprocessor.transform(X_val_raw)
+        X_test = preprocessor.transform(X_test_raw)
+
+        return X_train, X_val, X_test, y_train.values, y_val.values, y_test.values
+    else:
+        return X_train_raw, X_val_raw, X_test_raw, y_train.values, y_val.values, y_test.values
 
 
 def get_feature_names(dataset_name, val_size=0.15, test_size=0.15, random_state=42):
