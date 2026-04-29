@@ -1,8 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3514dfe64395ec571c6fdb469546bb72f9f30663055a6258cc8846cf693b81dc
-size 3934
-Regression_n_gt_10k,RandomForest,RMSE,3.5419,13.9444,4e-05
-Regression_d_gt_50,RandomForest,RMSE,25644.0781,0.2798,3.1e-05
-Regression_Mixed,RandomForest,RMSE,4479.4335,0.1866,0.000126
-Classification_d_gt_50,RandomForest,Accuracy,0.9687,0.1651,0.000102,0.9079
-Classification_Mixed,RandomForest,Accuracy,0.8913,0.0454,0.0001,0.9533
+Dataset,Algorithm,Metric Type,Test Score,Training Time (s),Inference Time per sample (s)
+Regression_n_gt_10k,MLP,RMSE,4.012,18.9274,0.0
+Regression_d_gt_50,MLP,RMSE,39224.7349,14.1971,1e-06
+Regression_Mixed,MLP,RMSE,10862.4237,1.5099,1e-06
+Classification_n_gt_10k,MLP,Accuracy,0.8659,3.0963,1e-06,0.8798
+Classification_d_gt_50,MLP,Accuracy,0.9638,1.1002,0.0,0.7845
+Classification_Mixed,MLP,Accuracy,0.8841,0.3471,1e-06,0.9374
+Regression_n_gt_10k,RandomForest,RMSE,3.5419,14.2201,7e-05
+Regression_d_gt_50,RandomForest,RMSE,25644.0781,0.2915,3.2e-05
+Regression_Mixed,RandomForest,RMSE,4479.4335,0.1484,0.000123
+Classification_n_gt_10k,RandomForest,Accuracy,0.9049,0.0844,8e-06,0.9288
+Classification_d_gt_50,RandomForest,Accuracy,0.9687,0.1647,1.4e-05,0.9079
+Classification_Mixed,RandomForest,Accuracy,0.8913,0.0463,0.0001,0.9533
+Regression_n_gt_10k,XGBoost,RMSE,3.5587,9.7598,1.4e-05
+Regression_d_gt_50,XGBoost,RMSE,23816.7305,1.7412,3e-06
+Regression_Mixed,XGBoost,RMSE,4383.8767,0.0214,2e-06
+Classification_n_gt_10k,XGBoost,Accuracy,0.8627,3.3514,5e-06,0.9307
+Classification_d_gt_50,XGBoost,Accuracy,0.9609,0.437,1e-06,0.9151
+Classification_Mixed,XGBoost,Accuracy,0.8551,0.0639,3e-06,0.9365
+Regression_n_gt_10k,xRFM,RMSE,3.1567,1148.8973,9.2e-05
+Regression_d_gt_50,xRFM,RMSE,23887.4219,0.5709,8e-06
+Regression_Mixed,xRFM,RMSE,4661.5047,0.0845,5e-06
+Classification_n_gt_10k,xRFM,Accuracy,0.8935,14.0494,2.5e-05,0.918
+Classification_d_gt_50,xRFM,Accuracy,0.9658,3.3202,1.3e-05,0.799
+Classification_Mixed,xRFM,Accuracy,0.8841,0.0309,4e-06,0.9403
