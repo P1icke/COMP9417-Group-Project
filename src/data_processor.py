@@ -55,7 +55,7 @@ DATASET_CONFIG = {
 
 def _build_preprocessor(X):
     """Dynamically builds a scikit-learn ColumnTransformer based on column datatypes."""
-    numeric_features = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
+    numeric_features = X.select_dtypes(include=['int64', 'float64', 'bool']).columns.tolist()
     categorical_features = X.select_dtypes(include=['object', 'category', 'str', 'string']).columns.tolist()
 
     numeric_transformer = Pipeline(steps=[

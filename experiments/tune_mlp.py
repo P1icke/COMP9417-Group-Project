@@ -38,8 +38,6 @@ from imblearn.under_sampling import RandomUnderSampler
 from src.data_processor import DATASET_CONFIG, _build_preprocessor, get_prepared_data
 
 
-np.random.seed(42)
-
 TUNED_PARAMS_DIR = Path("tuned_params/mlp")
 TUNED_PARAMS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -61,10 +59,6 @@ class _Tee:
     def flush(self):
         for s in self.streams:
             s.flush()
-
-
-_log_file = open(LOG_PATH, "a", buffering=1)
-sys.stdout = _Tee(sys.__stdout__, _log_file)
 
 
 class ImbalanceRanking(Enum):
@@ -277,10 +271,17 @@ def tune_dataset(dataset_name: str, config: dict) -> None:
 
 
 def main():
-    print(f"\n========= MLP tuning run @ {time.strftime('%Y-%m-%d %H:%M:%S')} =========")
-    for dataset_name, config in DATASET_CONFIG.items():
-        tune_dataset(dataset_name, config)
-    print("\nDone.")
+    np.random.seed(42)
+    log_file = open(LOG_PATH, "a", buffering=1)
+    sys.stdout = _Tee(sys.__stdout__, log_file)
+    try:
+        print(f"\n========= MLP tuning run @ {time.strftime('%Y-%m-%d %H:%M:%S')} =========")
+        for dataset_name, config in DATASET_CONFIG.items():
+            tune_dataset(dataset_name, config)
+        print("\nDone.")
+    finally:
+        sys.stdout = sys.__stdout__
+        log_file.close()
 
 
 if __name__ == "__main__":
