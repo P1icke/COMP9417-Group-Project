@@ -1,0 +1,15 @@
+Missing cells: [(10000, 'xRFM'), (10000, 'XGBoost'), (10000, 'RandomForest'), (10000, 'MLP')]
+--- n=10000 [xRFM] ---
+Fitting xRFM with 1 trees and 0 iterations per tree
+Building trees:   0%|          | 0/1 [00:00<?, ?it/s]Building trees:   0%|          | 0/1 [00:34<?, ?it/s]
+Tree has no split, stopping training
+  done in 34.7s, metrics={'RMSE': 3.6470179389554036}
+--- n=10000 [XGBoost] ---
+  done in 4.9s, metrics={'RMSE': 4.0142015009061085}
+--- n=10000 [RandomForest] ---
+  done in 5.3s, metrics={'RMSE': 3.97883766153188}
+--- n=10000 [MLP] ---
+  done in 2.5s, metrics={'RMSE': 4.342849101259777}
+Generating plot...
+  saved figure -> results/scaling_vs_n_Regression_n_gt_10k.png
+Done.
